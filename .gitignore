@@ -6,3 +6,6 @@ node_modules/
 /.claude/skills/
 /.qoder/skills/
 /skills-lock.json
+
+# Local agent planning and continuation.
+/.agents/.agent-work/
