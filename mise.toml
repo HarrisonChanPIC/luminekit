@@ -1,0 +1,33 @@
+[tools]
+node = "22.22.2"
+lefthook = "2.1.11"
+cocogitto = "7.0.0"
+
+[tasks.setup]
+description = "Install development dependencies and local Git hooks"
+depends = ["deps"]
+run = "lefthook install"
+
+[tasks.deps]
+description = "Install pinned development dependencies"
+run = "npm ci --ignore-scripts"
+
+[tasks."check-commits"]
+description = "Check commit history for Conventional Commits"
+run = "cog check"
+
+[tasks.check]
+description = "Validate skill metadata and local Markdown links and anchors"
+run = "npm run check"
+
+[tasks."skills-list"]
+description = "List skills discovered by the pinned skills CLI"
+run = "npm run skills:list"
+
+[tasks.test]
+description = "Validate content and test installations in temporary projects"
+run = "npm test"
+
+[tasks."check-all"]
+description = "Run content, installation and commit-history checks"
+depends = ["test", "check-commits"]

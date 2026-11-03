@@ -1,0 +1,16 @@
+glob_matcher: doublestar
+
+pre-commit:
+  commands:
+    check:
+      run: mise run check
+
+commit-msg:
+  commands:
+    cog:
+      run: mise exec -- cog verify --file "{1}"
+
+pre-push:
+  commands:
+    test:
+      run: mise run test

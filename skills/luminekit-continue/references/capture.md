@@ -1,0 +1,14 @@
+# Capture otherwise missing unfinished state
+
+Use for an agreed session/person boundary or permitted checkpoint. Identify the next task, intended reader and retrievable output scope. Inspect current owners, artifacts, tracker and continuation state first; if they recover the necessary context, return useful pointers instead of another note.
+
+## Capture the gap
+
+1. Select only otherwise missing objective/scope, current corrections, active decisions/rejected approaches, provisional hypotheses, relevant dirty/source/artifact identities, attempted work/check outcomes, action-critical conditions, uncertainty and next action. Link existing policy/status owners rather than copying whole plans, diffs or transcripts.
+2. Mark observations, supplied reports, intent, attempts and unknowns distinctly. Preserve current corrections and withdrawn permissions over older recall. Include as-of information only where interpretation depends on it.
+3. Choose a permitted discoverable location using existing conventions. For changed/person/team access use [recipient access](recipient-access.md) before distributing content or declaring pointers usable. Exclude credentials and denied sources.
+4. Use the [luminekit-workflow change safeguards](../../luminekit-workflow/SKILL.md) for an actual new/replaced note. Read the saved result against selected sources/corrections and recipient scope. Report its path and unverified dependencies.
+
+## Retire only after transfer
+
+The note remains provisional while it contains unique unfinished context. Promote confirmed knowledge through [knowledge lifecycle](../../luminekit-docs-maintain/references/owner-updates.md); unresolved work stays with the tracker. Use [selective closeout](../../luminekit-docs-maintain/references/closeout.md) before authorized retirement of the note's sole useful information.

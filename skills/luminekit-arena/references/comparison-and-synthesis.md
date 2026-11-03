@@ -1,0 +1,10 @@
+# Compare and synthesize approaches
+
+Use actual returned or explicitly supplied approaches and the criteria fixed before their outputs. The [independent-work procedure](independent-runs.md) owns context isolation, collection, judge setup and capability limits.
+
+1. **Assess each actual approach.** Compare its mechanism and source support criterion by criterion as satisfied, violated, unsupported or unavailable. Explain decisive evidence rather than confidence, length or votes. Mark scope/assumption differences affecting comparability. A missing candidate has no inferred design.
+2. **Respect hard requirements.** A weighted total cannot offset a violated constraint. Numeric scores are useful only under a meaningful predeclared rubric; qualitative dispositions suffice. Check any judge's conclusions against the artifacts and retain credible disagreements.
+3. **Choose a coherent base.** Select an approach capable of satisfying the hard criteria. If none qualifies, identify the unresolved correction/question instead of declaring a failed design victorious. One returned viable design can be assessed, but cannot establish a comparative win over absent candidates.
+4. **Integrate justified strengths.** Take a contribution only if its assumptions, interfaces, ownership, failure behavior and consequences fit the base and constraints. State what fits and why; reject incompatible grafts. Retain the base without a ceremonial blend when others offer no compatible improvement.
+5. **Verify the combined proposal.** Recheck every original criterion and changed interaction after synthesis. The base's earlier assessment does not cover new interactions. Remove contradictory additions or revisit the decision basis. Static feasibility is not a performed prototype.
+6. **Deliver the result.** Return the proposal, compact evidence-linked comparison, base/contributions, material rejected choices and unresolved gaps, with actual independent/supplied/judge coverage. Candidate evidence, judge findings and controller decisions remain distinguishable.

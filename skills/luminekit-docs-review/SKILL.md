@@ -1,0 +1,20 @@
+---
+name: luminekit-docs-review
+license: Proprietary. All rights reserved.
+description: Review a selected documentation scope for discoverability, ownership, structural defects, preserved meaning or semantic compatibility across available revisions/branches. Use for documentation audits and integration comparisons; ordinary drafting, tiny edits and specialist engineering/non-engineering content review belong to their own tasks.
+---
+
+# Review documented promises
+
+Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+
+Inspect the selected reader task and available documentation/source revisions. Review-only returns findings; apply fixes only when separately within the task's scope.
+
+| Concern | Procedure |
+| --- | --- |
+| Links/anchors, declared owners, derivative currentness, legacy witnesses or exceptions | [Structure and evidence](references/structure-and-evidence.md) |
+| Original/revised meaning or a reader's retrieval route | [Meaning and retrieval](references/meaning-and-retrieval.md) |
+| Proposal/target compatibility across available revisions | [Branch integration](references/branch-integration.md) |
+| Actual reading cost or a claimed reduction | [Reading cost](references/reading-cost.md) |
+
+Check complete promises and valid scope/current/proposed/history distinctions. Separate structural validity, semantic preservation, source/export fidelity and actual retrieval. No one check certifies the others. Report actionable findings or supported no-findings, inspected identities, valid keeps and actual coverage; unseen branches remain unseen.
