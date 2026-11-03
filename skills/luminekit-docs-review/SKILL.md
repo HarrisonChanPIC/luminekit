@@ -1,7 +1,7 @@
 ---
 name: luminekit-docs-review
 license: Proprietary. All rights reserved.
-description: Review a selected documentation scope for discoverability, ownership, structural defects, preserved meaning or semantic compatibility across available revisions/branches. Use for documentation audits and integration comparisons; ordinary drafting, tiny edits and specialist engineering/non-engineering content review belong to their own tasks.
+description: Review a selected documentation scope for progressive disclosure, discoverability, ownership, structural defects, preserved meaning or semantic compatibility across available revisions/branches. Use for documentation audits and integration comparisons; ordinary drafting, tiny edits and specialist engineering/non-engineering content review belong to their own tasks.
 ---
 
 # Review documented promises
@@ -12,7 +12,8 @@ Inspect the selected reader task and available documentation/source revisions. R
 
 | Concern | Procedure |
 | --- | --- |
-| Links/anchors, declared owners, derivative currentness, legacy witnesses or exceptions | [Structure and evidence](references/structure-and-evidence.md) |
+| Mixed reader tasks, unnecessary inline material, links/anchors or declared owners | [Structure and evidence](references/structure-and-evidence.md) |
+| Derivative currentness, legacy witnesses or structural exceptions | [Structure and evidence](references/structure-and-evidence.md) |
 | Original/revised meaning or a reader's retrieval route | [Meaning and retrieval](references/meaning-and-retrieval.md) |
 | Proposal/target compatibility across available revisions | [Branch integration](references/branch-integration.md) |
 | Actual reading cost or a claimed reduction | [Reading cost](references/reading-cost.md) |

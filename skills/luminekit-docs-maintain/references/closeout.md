@@ -5,7 +5,7 @@ Use for authorized closeout or retirement of selected working material. Read eac
 A record's age, completion or size does not decide disposal. Business originals retain their actual retention authority; a matching copy proves correspondence, not permission to discard the original.
 
 1. Establish the exact retirement scope and permitted recovery. Inspect destinations first: verify already-transferred value instead of copying or rewriting it again.
-2. Transfer missing supported value using [owner updates](owner-updates.md). Resolve source contradictions before their dependent promotion or removal. Preserve unresolved tasks in the existing tracker.
+2. Transfer missing supported value using [owner updates](owner-updates.md), placing current rules and useful rationale in their appropriate separate owners rather than copying the work narrative into guidance. Resolve source contradictions before their dependent promotion or removal. Preserve unresolved tasks in the existing tracker.
 3. Read back transferred meaning and repair its navigation. Every useful proposition must remain accessible with its operative conditions. Keep the sole source while meaning, transfer or required access is unresolved; independent verified items can still close.
 4. Apply removal using [migration/application](../../luminekit-docs-adopt/references/migration-and-application.md). Delete only reviewed disposable paths, leaving directories with unreviewed records intact.
 

@@ -1,6 +1,6 @@
 # Author missing knowledge from evidence
 
-Use when a reader lacks a useful factual or intended-behavior owner. First identify the reader question, relevant source paths/revisions, entity, period and constraints. Read only the requirements, implementation, tests, configuration, decisions or controlled records needed to answer it. A sufficient existing owner needs no replacement.
+Use when a reader lacks a useful factual or intended-behavior owner. First identify the reader question, relevant source paths/revisions, entity, period and constraints. Select the focused owner using [content placement](owners-and-navigation.md#place-content-by-reader-task) before drafting substantial material. Read only the requirements, implementation, tests, configuration, decisions or controlled records needed to answer it. A sufficient existing owner needs no replacement.
 
 ## New project
 
@@ -14,6 +14,6 @@ For business knowledge, preserve the responsible entity, document family/revisio
 
 ## Write and connect
 
-Use [knowledge lifecycle](../../luminekit-docs-maintain/references/owner-updates.md#knowledge-roles) to classify source-backed claims and handle current, approved-future and proposed rules. Keep the necessary source/revision beside the claim. State consequential disagreement rather than silently choosing the newest account.
+Use [knowledge lifecycle](../../luminekit-docs-maintain/references/owner-updates.md#knowledge-roles) to classify source-backed claims and handle current, approved-future and proposed rules. Keep the necessary source/revision and qualification beside the claim without importing source chronology into current guidance. State consequential disagreement rather than silently choosing the newest account.
 
 Create the useful owner, then use [owners/navigation](owners-and-navigation.md) to connect it. Verify authored content with [meaning and retrieval](../../luminekit-docs-review/references/meaning-and-retrieval.md), including a question that distinguishes actual supported knowledge from empty headings. Deliver the source basis and specific unanswered questions.

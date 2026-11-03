@@ -20,6 +20,8 @@ npx skills add arxbombus/luminekit --skill '*' -a claude-code codex qoder
 
 Add `-g` to install for your user account across projects. The CLI handles each agent's destination directories. If the repository is private, recipients need repository access and configured Git authentication. Remote commands require the collection to be available at that repository; local installation works before publication.
 
+Installation ends after installation and verification. Adopting or restructuring the receiving project's documentation requires its own requested scope.
+
 To inspect or install a local checkout, replace the source with its path. Run installation from the receiving project:
 
 ```sh

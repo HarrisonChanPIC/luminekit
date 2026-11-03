@@ -10,6 +10,8 @@ Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instru
 
 Update the existing owner after a confirmed change, reconcile current/proposed knowledge, or transfer useful value before authorized retirement. Inspect the affected source/change evidence and open work; correct current docs do not by themselves finish pending closeout.
 
+Preserve focused owners and concise routes during ordinary updates. Place independently needed additions in their task owner before expanding an entry; keep contextual history and work evidence outside current guidance. [Owner updates](references/owner-updates.md) applies the shared placement procedure.
+
 | Work | Procedure |
 | --- | --- |
 | Promote/reconcile changed facts, future terms or current/proposed state | [Owner updates](references/owner-updates.md) |

@@ -8,12 +8,14 @@ description: Establish progressive-disclosure documentation in new, sparse or do
 
 Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
 
-Establish a reliable route for a concrete reader task. Inspect current entries, owners and supporting sources before choosing changes. If an accurate, discoverable route already serves the task, verify it and return no change.
+Establish a reliable route for a concrete reader task. Inspect current entries, owners and supporting sources before choosing changes. If an accurate, discoverable, appropriately focused route already serves the task, verify it and return no change. Installation alone ends after installation/verification; it does not initiate adoption or rewriting.
+
+Keep entries to brief orientation and conditional routes; put substantive task-specific guidance in focused linked owners. Extract independently needed concerns before expanding an entry, regardless of size. Keep contextual history and work evidence outside current guidance, while preserving complete procedures and their conditions. Use [content placement](references/owners-and-navigation.md#place-content-by-reader-task) for placement decisions and examples.
 
 | Actual gap | Procedure |
 | --- | --- |
 | New project without implementation, or sparse docs with source/tests/configuration/business evidence | [Source-backed authoring](references/source-backed-authoring.md) |
-| Missing or ineffective knowledge owners/navigation | [Owners and navigation](references/owners-and-navigation.md) |
+| Missing/unfocused owners, mixed reader tasks or ineffective navigation | [Owners and navigation](references/owners-and-navigation.md) |
 | Authorized replacement, move, removal or new destination | [Migration and application](references/migration-and-application.md) |
 | Meaning preservation or a fresh-reader retrieval check | [Meaning and retrieval](../luminekit-docs-review/references/meaning-and-retrieval.md) |
 | Link/anchor/declared-owner checks | [Structure and evidence](../luminekit-docs-review/references/structure-and-evidence.md) |

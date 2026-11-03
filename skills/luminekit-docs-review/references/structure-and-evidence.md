@@ -1,6 +1,14 @@
 # Check structure, currentness and governed records
 
-Read only the owners/dependencies required by the selected reader task. Unclear ownership matters where it creates contradictory guidance, update risk or retrieval failure. Navigation should point to the rule's owner rather than repeat it; one page can serve several clearly separated knowledge roles.
+Read only the owners/dependencies required by the selected reader task. Unclear ownership matters where it creates contradictory guidance, update risk or retrieval failure. Navigation should point to the rule's owner rather than repeat it. Combined material must serve the same reader task, with roles and effective periods clear.
+
+## Disclosure and ownership
+
+Apply [content placement](../../luminekit-docs-adopt/references/owners-and-navigation.md#place-content-by-reader-task) regardless of document size. Check for substantive task details embedded in entries, independently needed concerns in one compulsory read unit, duplicated rules, and contextual history or work evidence in current guidance. A heading link into the same compulsory monolith does not establish extraction. Also check for fragmented procedures, empty navigation layers and unnecessary hops.
+
+Follow the selected task's branch and required dependencies rather than prefetching every link. Current guidance must work without historical originals or ignored work files. An exception, prerequisite or recovery step needed for the action belongs at the point of use or behind an explicit required dependency; moving it out of sight is not a disclosure improvement. Classifying operative guidance as evidence does not excuse a hidden dependency.
+
+For each finding identify the passage, affected reader task, unnecessary reading/update risk or missing condition, and bounded correction. Length alone is not a defect. Preserve justified coherent procedures and adequate routes; use [meaning comparison](meaning-and-retrieval.md#compare-propositions) to verify that extraction preserves complete rules and explicit discrepancies.
 
 ## Links and current derivatives
 
