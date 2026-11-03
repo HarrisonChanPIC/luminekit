@@ -93,7 +93,9 @@ try {
         assert.match(invalidAnchor, /missing-heading-in-file/);
         await writeFile(entry, original);
 
-        await rm(join(project, '.agents/skills/luminekit-docs-review/references/structure-and-evidence.md'));
+        // Give the removed shared resource an incoming link in this fixture.
+        await writeFile(entry, `${original}\n[Shared artifact handling](../luminekit-workflow/references/artifacts.md)\n`);
+        await rm(join(project, '.agents/skills/luminekit-workflow/references/artifacts.md'));
         const missingResource = run(remark,
           [...installedEntries, '--rc-path', config, '--frail', '--no-stdout', '--quiet'], project, 1);
         assert.match(missingResource, /missing-file/);
