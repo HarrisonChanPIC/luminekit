@@ -1,7 +1,7 @@
 ---
 name: luminekit-attack-the-premise
 license: Proprietary. All rights reserved.
-description: Challenge a factual assumption shared by repeated ineffective attempts, or explicitly examine whether an approach rests on a false premise. Identify a discriminating observation, follow the evidence and return a supported next direction. Ordinary diagnosis and redesign remain separate; repetition alone proves neither a false premise nor bad architecture.
+description: Test a factual assumption shared by repeated ineffective attempts before another fix preserves it, or explicitly examine whether an approach rests on a false premise. Return a discriminating observation and supported next direction.
 ---
 
 # Test the belief before another fix

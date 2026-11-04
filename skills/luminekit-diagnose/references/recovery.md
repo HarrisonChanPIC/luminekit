@@ -8,4 +8,4 @@ Identify who can establish invariants, cleanup and recovery guarantees for absen
 
 Finite recovery attempts need a relevant budget and safe-repeat semantics. Continuing supervision needs lifecycle ownership and observable degradation. Make invalid state and unknown outcomes visible through an available reporting path; reporting failure grants no new notification permission.
 
-For repeated belief-preserving fixes, use the `luminekit-attack-the-premise` skill once the common factual assumption is the question. Return the state invariant, supported recovery disposition, remaining uncertainty and next action. Remove only authorized task-owned temporary instrumentation after verification.
+Return the state invariant, supported recovery disposition, remaining uncertainty and next action. Remove only authorized task-owned temporary instrumentation after verification.

@@ -15,6 +15,6 @@ Resolve the actual code, plan, diff or returned correction and its independent i
 | Substantive code/plan correctness, standards or test strength | [Review criteria](references/review-criteria.md) |
 | Independent checks, supplied logs or built/generated-entry correspondence | Verification procedure of the `luminekit-engineering-change` skill, retaining review-only scope |
 | Returned changes or prior findings | [Follow-up](references/follow-up.md) |
-| Explicit adversarial review or consequential uncertainty needing deliberate challenge | The `luminekit-adversarial-review` skill, retaining review-only scope |
+| Consequential uncertainty at boundaries, failure paths or interactions | The `luminekit-adversarial-review` skill, retaining review-only scope |
 
-Check findings against surrounding source, callers and counterevidence. Qualified source-supported defects survive unavailable execution. Deliver all supported findings. Review approval and a source-confirmed fix do not certify the current built/deployed result.
+Check findings against surrounding source, callers and counterevidence. Deliver all supported findings. Review approval and a source-confirmed fix do not certify the current built/deployed result.

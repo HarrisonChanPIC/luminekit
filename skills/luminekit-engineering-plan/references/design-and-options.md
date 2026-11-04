@@ -4,4 +4,4 @@ Ground the approach in actual entry points, ownership and caller constraints. Sp
 
 Trace affected storage, wire formats, runtime/version assumptions and flags. Identify the particular uncertainty and evidence that would resolve it. Compare alternatives against established criteria such as compatibility, complexity, dependency/lifecycle ownership and failure behavior. A vendor performance claim needs a comparable workload before it can decide the design. Reopen an accepted choice only for a concrete new constraint or incompatibility.
 
-For independent candidate comparison, use the `luminekit-arena` skill. The planning product and permitted effects remain those of the caller. A symptom or repeated failed fix instead uses the `luminekit-diagnose` skill; a shared unsupported belief uses the `luminekit-attack-the-premise` skill.
+For independent candidate comparison, use the independent-runs and comparison procedures of the `luminekit-arena` skill within the planning product.

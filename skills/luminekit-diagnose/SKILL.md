@@ -13,7 +13,7 @@ Establish expected versus observed behavior, causal evidence and the next suppor
 1. Inspect the current contract, relevant artifact/source/configuration and attempts. Trace inputs toward the first divergence; compare a relevant working path.
 2. Frame falsifiable explanations and independent expected observations. Choose a focused probe that still reaches the real failure boundary; the implementation under diagnosis cannot define its own oracle.
 3. Run the authorized discriminator or retain qualified static analysis. Separate symptom reproduction, cause, hypothesis, candidate remedy and verified fix. Follow the input/state/error chain toward its origin rather than stopping at the last visible symptom.
-4. Recommend a scoped remedy or next check with acceptance. Apply a remedy only within an implementation request; carry valid diagnosis forward instead of restarting it. If attempts share an unsupported belief, use the `luminekit-attack-the-premise` skill.
+4. Recommend a scoped remedy or next check with acceptance. Apply a remedy only within an implementation request; carry valid diagnosis forward instead of restarting it.
 
 | Concern | Procedure |
 | --- | --- |

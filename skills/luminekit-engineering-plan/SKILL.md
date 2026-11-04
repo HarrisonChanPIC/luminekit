@@ -14,6 +14,5 @@ Reuse sufficient understanding of preserved behavior, interfaces, state/data, co
 | --- | --- |
 | Interfaces, alternatives or material design uncertainty | [Design and options](references/design-and-options.md) |
 | Multiple units, dependencies, migration or substantial verification | [Slices and acceptance](references/slices-and-acceptance.md) |
-| Explicit arena request or consequential choice needing independent candidates | The `luminekit-arena` skill, restricted to the design product |
 
 Give each necessary unit a useful outcome, affected owner/interface, genuine dependencies and independent acceptance. Stop elaborating when the next unit can proceed without inventing a material decision. Review feasibility against current constraints and deliver the approach, decisive tradeoffs, units and open decisions. A justified no-change plan is valid. Planning alone includes no scaffold, prototype, benchmark, dependency installation or published ticket.
