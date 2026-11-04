@@ -15,6 +15,7 @@ Use actual repository conventions; preserve behavior outside scope and meaningfu
 | Substantive feature/fix, refactor, migration or prototype | [Change kinds](references/change-kinds.md) |
 | Practical test-first behavior change, or explicit test-first request | [Test-first cycle](references/test-first.md) before changing that behavior |
 | Independent expectations, meaningful checks or source/build correspondence | [Verification](references/verification.md) |
+| Implementing an agreed plan with multiple units | [Unit review](references/unit-review.md) |
 | Unexplained failure or repeated ineffective changes | The `luminekit-diagnose` skill; use its recovery branch when continued state is uncertain |
 | Language-specific behavior | Only relevant [Python](references/python.md), [TypeScript](references/typescript.md) or [Go](references/go.md) guidance |
 
