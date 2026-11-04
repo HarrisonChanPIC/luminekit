@@ -1,7 +1,7 @@
 ---
 name: luminekit-engineering-release
 license: Proprietary. All rights reserved.
-description: Prepare an engineering release or perform explicitly approved push, PR, work-item, merge, deployment or migration actions with current revision evidence and verified per-action results. Preparation alone authorizes no publication.
+description: Prepare an engineering release or perform push, PR, work-item, merge, deployment or migration actions with current revision evidence and verified per-action results.
 ---
 
 # Prepare or perform an engineering release
@@ -18,4 +18,4 @@ Resolve preparation versus each requested effect, repository/environment, outgoi
 | Actual Azure DevOps operation through available git/az | [Azure DevOps](references/azure-devops.md) |
 | Deployment or stateful migration | [Deployment](references/deployment.md) |
 
-Resolve exact targets/payloads and real prerequisites immediately before each effect; do not infer additional operations from readiness. Report the prepared product or actual per-item results, matching evidence, held work and next safe step. Mocks and documentation do not establish live-provider support.
+Deliver the prepared product or actual per-item results. Mocks and documentation do not establish live-provider support.

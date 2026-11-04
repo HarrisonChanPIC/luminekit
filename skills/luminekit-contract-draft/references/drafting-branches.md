@@ -22,4 +22,4 @@ Keep proposed effect distinct from source execution status. Do not invent retroa
 
 Start from the identified working revision and create the requested controlled derivative. Include only authorized substance and necessary connected definition/reference changes, identifying consequential edits separately from unrelated improvements. A revised draft does not itself amend an executed instrument.
 
-Compare intended changes, inherited obligations and unexpected differences against the baseline. Drafting self-check does not establish independent legal review or acceptance; actual returned-finding dispositions use the review procedure.
+Compare intended changes, inherited obligations and unexpected differences against the baseline. Drafting self-check does not establish independent legal review or acceptance; use the findings-and-follow-up procedure of the `luminekit-contract-review` skill for a requested review of returned corrections.

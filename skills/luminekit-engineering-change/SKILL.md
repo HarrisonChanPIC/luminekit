@@ -1,14 +1,14 @@
 ---
 name: luminekit-engineering-change
 license: Proprietary. All rights reserved.
-description: Implement an authorized engineering feature, fix, refactor or prototype with a scoped diff and meaningful verification. Use for requested changes; explanation, planning and review-only requests retain their scope and do not become edits.
+description: Implement an engineering feature, fix, refactor or prototype with a scoped diff and meaningful verification.
 ---
 
 # Implement a coherent change
 
 Follow the `luminekit-workflow` skill within this skill’s scope.
 
-Establish the outcome, independent acceptance, allowed targets and current source/dirty state. Use actual repository conventions; preserve behavior outside scope and meaningful error, cancellation and resource semantics. Do not weaken assertions, hardcode examples or swallow failures to get green.
+Use actual repository conventions; preserve behavior outside scope and meaningful error, cancellation and resource semantics.
 
 | Concern | Procedure |
 | --- | --- |
@@ -16,9 +16,8 @@ Establish the outcome, independent acceptance, allowed targets and current sourc
 | Practical test-first behavior change, or explicit test-first request | [Test-first cycle](references/test-first.md) before changing that behavior |
 | Independent expectations, meaningful checks or source/build correspondence | [Verification](references/verification.md) |
 | Unexplained failure or repeated ineffective changes | The `luminekit-diagnose` skill; use its recovery branch when continued state is uncertain |
-| Requested commit, publication or deployment | The `luminekit-engineering-release` skill |
 | Language-specific behavior | Only relevant [Python](references/python.md), [TypeScript](references/typescript.md) or [Go](references/go.md) guidance |
 
-Inspect the actual final diff/result and run applicable project gates. A harmless prose edit needs an affected content check, not a mirrored test. If a test-first path is unavailable, report that limit without resetting working user code to manufacture red-before history. A language guide supplies no migration authority.
+Inspect the actual final diff/result and run applicable project gates.
 
-Promote confirmed behavior/architecture into its affected documentation owner and pointers within scope. Deliver the change, actual verification and material limitations.
+Promote confirmed behavior/architecture into its affected documentation owner and pointers within scope.

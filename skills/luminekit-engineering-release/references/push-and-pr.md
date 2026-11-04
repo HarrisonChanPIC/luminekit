@@ -8,4 +8,4 @@ For actual creation/update, verify source/target repositories, refs, revisions a
 
 A branch can move between inspection and creation; before/after reads do not enforce an atomic expected revision. Where a grant or policy requires an exact revision, use a supported guard or an expressly approved tolerance allowed by that policy. Without either, hold the mutation and identify the missing capability. Do not invent a revision flag or temporary pinning branch. Compare returned identities with the approved result.
 
-Before merging, check actual approval and current review/check/policy state, including the approved merge method and any source deletion or bypass. Use an established applicable release procedure rather than imposing an additional universal sequence.
+Before merging, check actual approval and current review/check/policy state, including the approved merge method and any source deletion or bypass. Follow the applicable release procedure.

@@ -1,7 +1,7 @@
 ---
 name: luminekit-engineering-review
 license: Proprietary. All rights reserved.
-description: Review selected engineering code, a diff, a plan or a returned correction against requirements, applicable standards and meaningful verification evidence. Use for requested or genuinely needed review; review-only does not authorize fixes, experiments or publication.
+description: Review engineering code, a diff, a plan or a returned correction against requirements, applicable standards and meaningful verification evidence.
 ---
 
 # Review actual engineering work
@@ -17,4 +17,4 @@ Resolve the actual code, plan, diff or returned correction and its independent i
 | Returned changes or prior findings | [Follow-up](references/follow-up.md) |
 | Explicit adversarial review or consequential uncertainty needing deliberate challenge | The `luminekit-adversarial-review` skill, retaining review-only scope |
 
-Check findings against surrounding source, callers and counterevidence. A tool/setup failure is a check failure, not proof of a product defect; a missing check is a coverage gap. Qualified source-supported defects survive unavailable execution. Deliver all supported findings, material dispositions and performed/unperformed coverage. Review approval and a source-confirmed fix do not certify the current built/deployed result.
+Check findings against surrounding source, callers and counterevidence. Qualified source-supported defects survive unavailable execution. Deliver all supported findings. Review approval and a source-confirmed fix do not certify the current built/deployed result.

@@ -11,5 +11,3 @@ Treat a request to draft/revise/send as a request **under this release policy**,
 5. **No autonomous scheduling, retry or replay, even after confirmed no effect or a replay guarantee.** Reconcile an uncertain prior attempt first; every new attempt needs a new separate later human “send this”. Engineering approval never authorizes email/chat.
 
 A requested mailbox-draft save/update is a separate write and does not authorize sending. When sending is held, state the missing confirmation, scope or capability and return the usable prepared draft where supported.
-
-Before an actual attempt or reconciliation, use the operation-outcomes procedure of the `luminekit-workflow` skill.

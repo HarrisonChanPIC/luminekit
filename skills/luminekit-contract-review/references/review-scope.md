@@ -1,7 +1,5 @@
 # Choose the contract review scope
 
-For linked sources, precedence, status or denied material dependencies, use the family-and-terms procedure of the `luminekit-contract-draft` skill. Apply only that procedure; drafting stays out of scope.
-
 ## Full review
 
 Inspect the requested operative family and its material definitions, schedules, exceptions, cross-references, survival and precedence interactions. Use the actual business purpose and applicable supplied playbook or approved positions.

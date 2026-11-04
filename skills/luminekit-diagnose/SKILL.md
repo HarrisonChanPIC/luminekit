@@ -1,14 +1,14 @@
 ---
 name: luminekit-diagnose
 license: Proprietary. All rights reserved.
-description: Explain a reported failure, unexpected result or ineffective implementation loop using current evidence and discriminating checks. Distinguish reproduced symptoms, supported causes, hypotheses and proposed remedies from verified fixes. Use for diagnosis and recovery analysis; a diagnosis request does not authorize changing its subject.
+description: Diagnose a reported failure, unexpected result or ineffective implementation loop using current evidence and discriminating checks, including recovery analysis.
 ---
 
 # Diagnose the actual failure
 
 Follow the `luminekit-workflow` skill within this skill’s scope.
 
-Establish expected versus observed behavior, causal evidence and the next supported action. Stale reports, handled warnings and failed diagnostic tools do not automatically establish a current product defect.
+Establish expected versus observed behavior, causal evidence and the next supported action. Stale reports and handled warnings do not automatically establish a current product defect.
 
 1. Inspect the current contract, relevant artifact/source/configuration and attempts. Trace inputs toward the first divergence; compare a relevant working path.
 2. Frame falsifiable explanations and independent expected observations. Choose a focused probe that still reaches the real failure boundary; the implementation under diagnosis cannot define its own oracle.
@@ -23,4 +23,4 @@ Establish expected versus observed behavior, causal evidence and the next suppor
 | Timing/shared-resource/lifecycle/platform-related CI failure | [CI reliability](references/ci-reliability.md) |
 | Partial/unknown effects, retries, failed changes or cleanup make continuation uncertain | [Recovery](references/recovery.md) |
 
-Deliver the supported cause or explicit uncertainty/no-current-defect result, decisive evidence and next action. This method supplies investigative discipline; domain requirements still come from their actual owners.
+Deliver the supported cause or explicit uncertainty/no-current-defect result, decisive evidence and next action.
