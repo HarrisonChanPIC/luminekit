@@ -16,6 +16,7 @@ const docs = [
   'luminekit-workflow', 'luminekit-docs-adopt', 'luminekit-docs-review',
   'luminekit-docs-maintain', 'luminekit-continue',
 ];
+const authoring = ['luminekit-agent-skills-maintainence', 'luminekit-workflow'];
 const all = (await readdir(join(source, 'skills'), { withFileTypes: true }))
   .filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
 const temporary = await mkdtemp(join(tmpdir(), 'luminekit-install-'));
@@ -41,7 +42,7 @@ async function files(directory) {
 }
 
 try {
-  for (const [label, selection] of [['full', all], ['docs', docs]]) {
+  for (const [label, selection] of [['full', all], ['docs', docs], ['authoring', authoring]]) {
     for (const copy of [false, true]) {
       const project = join(temporary, `${label}-${copy ? 'copy' : 'symlink'}`);
       await mkdir(project);
@@ -55,7 +56,7 @@ try {
         await writeFile(join(project, path), `Unrelated content: ${path}\n`);
       }
 
-      // Exercise the documented wildcard and explicit documentation selection.
+      // Exercise the documented wildcard and explicit smaller selections.
       const selected = label === 'full' ? ['*'] : selection;
       const args = ['add', source, '--skill', ...selected, '-a', ...agents, '-y'];
       if (copy) args.push('--copy');
@@ -80,7 +81,7 @@ try {
       for (const path of preserved) {
         assert.equal(await readFile(join(project, path), 'utf8'), `Unrelated content: ${path}\n`);
       }
-      // Each installed skill must be self-contained and name only selected skills.
+      // Each bundle is self-contained; named collection dependencies must be selected.
       const installedEntries = selection.map((name) => join('.agents/skills', name));
       const remarkArgs = [...installedEntries, '--rc-path', config, '--frail', '--no-stdout', '--quiet'];
       const checkArgs = [join(project, '.agents/skills'), ...selection];
