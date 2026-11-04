@@ -6,7 +6,7 @@ description: Prepare an engineering release or perform explicitly approved push,
 
 # Prepare or perform an engineering release
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Resolve preparation versus each requested effect, repository/environment, outgoing revision/dirty scope, targets and current review/check evidence. A PR body or readiness assessment can be the complete requested product.
 

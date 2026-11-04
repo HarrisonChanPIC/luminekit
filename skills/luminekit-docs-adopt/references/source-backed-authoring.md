@@ -14,6 +14,6 @@ For business knowledge, preserve the responsible entity, document family/revisio
 
 ## Write and connect
 
-Use [knowledge lifecycle](../../luminekit-docs-maintain/references/owner-updates.md#knowledge-roles) to classify source-backed claims and handle current, approved-future and proposed rules. Keep the necessary source/revision and qualification beside the claim without importing source chronology into current guidance. State consequential disagreement rather than silently choosing the newest account.
+Use the knowledge roles in the owner-updates procedure of the `luminekit-docs-maintain` skill to classify source-backed claims and handle current, approved-future and proposed rules. Keep the necessary source/revision and qualification beside the claim without importing source chronology into current guidance. State consequential disagreement rather than silently choosing the newest account.
 
-Create the useful owner, then use [owners/navigation](owners-and-navigation.md) to connect it. Verify authored content with [meaning and retrieval](../../luminekit-docs-review/references/meaning-and-retrieval.md), including a question that distinguishes actual supported knowledge from empty headings. Deliver the source basis and specific unanswered questions.
+Create the useful owner, then use [owners/navigation](owners-and-navigation.md) to connect it. Verify authored content with the meaning-and-retrieval procedure of the `luminekit-docs-review` skill, including a question that distinguishes actual supported knowledge from empty headings. Deliver the source basis and specific unanswered questions.

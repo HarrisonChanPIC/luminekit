@@ -6,7 +6,7 @@ description: Establish progressive-disclosure documentation in new, sparse or do
 
 # Adopt useful documentation
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Establish a reliable route for a concrete reader task. Inspect current entries, owners and supporting sources before choosing changes. If an accurate, discoverable, appropriately focused route already serves the task, verify it and return no change. Installation alone ends after installation/verification; it does not initiate adoption or rewriting.
 
@@ -17,8 +17,8 @@ Keep entries to brief orientation and conditional routes; put substantive task-s
 | New project without implementation, or sparse docs with source/tests/configuration/business evidence | [Source-backed authoring](references/source-backed-authoring.md) |
 | Missing/unfocused owners, mixed reader tasks or ineffective navigation | [Owners and navigation](references/owners-and-navigation.md) |
 | Authorized replacement, move, removal or new destination | [Migration and application](references/migration-and-application.md) |
-| Meaning preservation or a fresh-reader retrieval check | [Meaning and retrieval](../luminekit-docs-review/references/meaning-and-retrieval.md) |
-| Link/anchor/declared-owner checks | [Structure and evidence](../luminekit-docs-review/references/structure-and-evidence.md) |
+| Meaning preservation or a fresh-reader retrieval check | Meaning-and-retrieval procedure of the `luminekit-docs-review` skill |
+| Link/anchor/declared-owner checks | Structure-and-evidence procedure of the `luminekit-docs-review` skill |
 
 Write supported knowledge rather than an empty skeleton. Distinguish intended behavior from observed implementation. Reuse useful layout; select a small practical location when none exists. Preserve operative conditions, exceptions, effective periods, source identity and meaningful rationale through any reorganization.
 

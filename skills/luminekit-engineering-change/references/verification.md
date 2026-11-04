@@ -12,7 +12,7 @@ An authorized isolated mutant can demonstrate detector sensitivity: it must reac
 
 ## Match the actual boundary
 
-Serial calls, threads, independent processes and separate CI jobs exercise different coordination claims. Match the check to real clients and persistence. A process-local mutex cannot establish independent-client coordination; independent processes may still share host ports, predictable paths, services and databases. Inspect durable rows and each returned identity when they define correctness. Use readiness/completion transitions to prove relevant overlap rather than relying on a sleep. For an existing probabilistic failure, the [CI reliability procedure](../../luminekit-diagnose/references/ci-reliability.md) owns further topology diagnosis.
+Serial calls, threads, independent processes and separate CI jobs exercise different coordination claims. Match the check to real clients and persistence. A process-local mutex cannot establish independent-client coordination; independent processes may still share host ports, predictable paths, services and databases. Inspect durable rows and each returned identity when they define correctness. Use readiness/completion transitions to prove relevant overlap rather than relying on a sleep. For an existing probabilistic failure, the CI-reliability procedure of the `luminekit-diagnose` skill owns further topology diagnosis.
 
 Performance comparisons need comparable workloads and conditions. Check visible UI, compiled/generated entry or deployed behavior only when that is the requested boundary; source inspection or in-memory success has narrower coverage.
 

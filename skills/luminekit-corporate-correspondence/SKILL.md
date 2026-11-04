@@ -6,7 +6,7 @@ description: Draft, revise, plan, review or send business emails and chat messag
 
 # Produce useful correspondence
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Prepare the requested communication plan, draft, revision or wording review. A tiny edit can finish directly.
 
@@ -18,4 +18,4 @@ Check the sender/entity and customer/supplier roles, names, amount/currency/unit
 
 Follow the requested language and actual user/team conventions. Translation and polishing must preserve uncertainty, conditions and the strength of commitments; natural wording may change order or salutation without changing meaning. A minor wording edit does not need a thread search or a full email.
 
-For returned wording, verify prior concerns against the actual revision, preserve supplied finding IDs and keep new issues distinct. Deliver copy-ready text with internal questions separate. For send eligibility, actual sending or uncertain message effects, read [message actions](references/message-actions.md). Read the workflow’s [artifact verification](../luminekit-workflow/references/artifacts.md) only for a requested calculation or format/export operation.
+For returned wording, verify prior concerns against the actual revision, preserve supplied finding IDs and keep new issues distinct. Deliver copy-ready text with internal questions separate. For send eligibility, actual sending or uncertain message effects, read [message actions](references/message-actions.md). Read the artifacts procedure of the `luminekit-workflow` skill only for a requested calculation or format/export operation.

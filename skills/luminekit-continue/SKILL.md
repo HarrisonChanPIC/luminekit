@@ -6,7 +6,7 @@ description: Capture otherwise missing unfinished state at a session/person boun
 
 # Continue from verifiable state
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Capture or recover only the unfinished state current docs/artifacts/tracker cannot reconstruct. A checkpoint is a dated lead; current sources and user corrections govern. If existing owners suffice, return their pointers without creating a duplicate packet.
 

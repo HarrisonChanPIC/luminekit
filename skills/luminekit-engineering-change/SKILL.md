@@ -6,7 +6,7 @@ description: Implement an authorized engineering feature, fix, refactor or proto
 
 # Implement a coherent change
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Establish the outcome, independent acceptance, allowed targets and current source/dirty state. Use actual repository conventions; preserve behavior outside scope and meaningful error, cancellation and resource semantics. Do not weaken assertions, hardcode examples or swallow failures to get green.
 
@@ -15,8 +15,8 @@ Establish the outcome, independent acceptance, allowed targets and current sourc
 | Substantive feature/fix, refactor, migration or prototype | [Change kinds](references/change-kinds.md) |
 | Practical test-first behavior change, or explicit test-first request | [Test-first cycle](references/test-first.md) before changing that behavior |
 | Independent expectations, meaningful checks or source/build correspondence | [Verification](references/verification.md) |
-| Unexplained failure or repeated ineffective changes | [Diagnosis](../luminekit-diagnose/SKILL.md); use its recovery branch when continued state is uncertain |
-| Requested commit, publication or deployment | Use [luminekit-engineering-release](../luminekit-engineering-release/SKILL.md) |
+| Unexplained failure or repeated ineffective changes | The `luminekit-diagnose` skill; use its recovery branch when continued state is uncertain |
+| Requested commit, publication or deployment | The `luminekit-engineering-release` skill |
 | Language-specific behavior | Only relevant [Python](references/python.md), [TypeScript](references/typescript.md) or [Go](references/go.md) guidance |
 
 Inspect the actual final diff/result and run applicable project gates. A harmless prose edit needs an affected content check, not a mirrored test. If a test-first path is unavailable, report that limit without resetting working user code to manufacture red-before history. A language guide supplies no migration authority.

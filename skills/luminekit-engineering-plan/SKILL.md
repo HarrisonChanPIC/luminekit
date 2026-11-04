@@ -6,7 +6,7 @@ description: Design a bounded engineering feature, refactor, migration or archit
 
 # Plan a coherent engineering change
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Reuse sufficient understanding of preserved behavior, interfaces, state/data, compatibility and existing checks. Choose independent observable acceptance before a solution. Preserve compatible accepted decisions and compare options for a named tradeoff rather than by default.
 
@@ -14,6 +14,6 @@ Reuse sufficient understanding of preserved behavior, interfaces, state/data, co
 | --- | --- |
 | Interfaces, alternatives or material design uncertainty | [Design and options](references/design-and-options.md) |
 | Multiple units, dependencies, migration or substantial verification | [Slices and acceptance](references/slices-and-acceptance.md) |
-| Explicit arena request or consequential choice needing independent candidates | [Arena](../luminekit-arena/SKILL.md), restricted to the design product |
+| Explicit arena request or consequential choice needing independent candidates | The `luminekit-arena` skill, restricted to the design product |
 
 Give each necessary unit a useful outcome, affected owner/interface, genuine dependencies and independent acceptance. Stop elaborating when the next unit can proceed without inventing a material decision. Review feasibility against current constraints and deliver the approach, decisive tradeoffs, units and open decisions. A justified no-change plan is valid. Planning alone includes no scaffold, prototype, benchmark, dependency installation or published ticket.

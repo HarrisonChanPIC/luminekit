@@ -6,7 +6,7 @@ description: Review a selected documentation scope for progressive disclosure, d
 
 # Review documented promises
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Inspect the selected reader task and available documentation/source revisions. Review-only returns findings; apply fixes only when separately within the task's scope.
 

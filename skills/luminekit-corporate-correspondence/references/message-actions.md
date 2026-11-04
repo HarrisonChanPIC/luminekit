@@ -12,4 +12,4 @@ Treat a request to draft/revise/send as a request **under this release policy**,
 
 A requested mailbox-draft save/update is a separate write and does not authorize sending. When sending is held, state the missing confirmation, scope or capability and return the usable prepared draft where supported.
 
-Before an actual attempt or reconciliation, use the workflow’s [operation outcomes](../../luminekit-workflow/references/action-outcomes.md).
+Before an actual attempt or reconciliation, use the operation-outcomes procedure of the `luminekit-workflow` skill.

@@ -6,7 +6,7 @@ description: Run or assess a bounded comparison of independent candidate approac
 
 # Compare independent approaches
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Use an arena for one bounded consequential decision or an explicit request for independent candidates. The result is a coherent proposal supported by actual candidate evidence; it retains the caller's product and permitted effects.
 

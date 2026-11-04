@@ -6,7 +6,7 @@ description: Challenge a factual assumption shared by repeated ineffective attem
 
 # Test the belief before another fix
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Challenge one factual assumption shared by ineffective attempts, or an explicitly questioned approach. A premise describes the situation; a requirement or design preference belongs in planning. Failure count alone proves neither a false premise nor bad architecture.
 
@@ -16,4 +16,4 @@ Challenge one factual assumption shared by ineffective attempts, or an explicitl
 4. If contradicted, stop building fixes on it and follow the factor it failed to predict. If supported within scope, ask the next causal why. If inconclusive, name the missing distinguishing evidence. Current success can retire a stale theory without proving downstream effects.
 5. Trace demonstrated bad state through callers/transformations to its origin. Consider removing the condition rather than recurring compensation, while distinguishing invalid state from legitimate state requiring correct handling. Retries/guards are not inherently defects, and a finding grants no broad redesign.
 
-Return the premise, decisive evidence, supported/contradicted/inconclusive disposition and next direction. Use [diagnosis](../luminekit-diagnose/SKILL.md) when a supported premise still leaves the cause unresolved; reuse the investigation already done.
+Return the premise, decisive evidence, supported/contradicted/inconclusive disposition and next direction. Use the `luminekit-diagnose` skill when a supported premise still leaves the cause unresolved; reuse the investigation already done.

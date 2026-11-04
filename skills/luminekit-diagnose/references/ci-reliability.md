@@ -1,6 +1,6 @@
 # Diagnose probabilistic test or CI failure
 
-Use for actual timing, resource, lifecycle or platform uncertainty. Inspect the owning test policy, runner configuration and job topology. Apply [engineering verification](../../luminekit-engineering-change/references/verification.md) for independent expectations and coordination boundaries.
+Use for actual timing, resource, lifecycle or platform uncertainty. Inspect the owning test policy, runner configuration and job topology. Apply the verification procedure of the `luminekit-engineering-change` skill for independent expectations and coordination boundaries.
 
 ## Classify supported evidence
 

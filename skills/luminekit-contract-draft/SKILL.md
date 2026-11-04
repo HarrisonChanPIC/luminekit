@@ -6,7 +6,7 @@ description: Draft a new agreement, statement of work, amendment or explicitly r
 
 # Draft the controlled agreement
 
-Use the [luminekit-workflow](../luminekit-workflow/SKILL.md) skill if its instructions are not already loaded. Reuse current task state, then continue within this skill’s scope.
+Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Resolve our side, parties, document kind, commercial instructions, template/playbook and operative family/revisions. A complete approved template can be filled directly, changing only supplied variables. Distinguish executed instruments, approved drafting instructions, proposed terms and open decisions.
 
@@ -14,10 +14,10 @@ Resolve our side, parties, document kind, commercial instructions, template/play
 | --- | --- |
 | Linked family, precedence, template suitability or missing material terms | [Family and terms](references/family-and-terms.md) |
 | Substantive agreement, SOW, amendment or requested revision | [Drafting branches](references/drafting-branches.md) |
-| File formats, redlines, rendering or source/export correspondence | [Artifact handling](../luminekit-workflow/references/artifacts.md) |
+| File formats, redlines, rendering or source/export correspondence | Artifacts procedure of the `luminekit-workflow` skill |
 
 Create the requested controlled draft/derivative; do not replace an executed instrument as though proposed terms already govern. Keep material open terms visibly unresolved. Compare edited and surviving terms against source facts: family links, definitions/schedules, amounts/currency/unit/period, dates, conditions, obligations and precedence. Drafting self-check is distinct from independent legal/company review.
 
 Deliver the draft/location, source/revision basis, open decisions and checks, clearly stating draft status. Drafting supplies no contract acceptance or signature authority.
 
-For requested email/chat delivery, use the [luminekit-corporate-correspondence](../luminekit-corporate-correspondence/SKILL.md) skill; reuse it if already loaded.
+For requested email/chat delivery, use the `luminekit-corporate-correspondence` skill.

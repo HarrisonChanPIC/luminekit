@@ -4,4 +4,4 @@ Read the relevant definitions, consumers, persistent/data contracts and failure 
 
 Use current project/language standards as requirements and label heuristics as such. A missing or stale documentation owner is a finding only against an actual required contract; a proposal should not be represented as current behavior. Do not substitute the reviewer's preferred patch for a correct implementation.
 
-For test independence, actual runtime boundaries or built-source claims, use [engineering verification](../../luminekit-engineering-change/references/verification.md). Standards compliance and functional correctness are separate review dimensions: neither cancels a defect in the other. Combine findings with the same cause while retaining relevant independent witnesses and distinct consequences.
+For test independence, actual runtime boundaries or built-source claims, use the verification procedure of the `luminekit-engineering-change` skill. Standards compliance and functional correctness are separate review dimensions: neither cancels a defect in the other. Combine findings with the same cause while retaining relevant independent witnesses and distinct consequences.

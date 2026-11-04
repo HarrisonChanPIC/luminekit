@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 const source = fileURLToPath(new URL('../', import.meta.url));
 const installer = join(source, 'node_modules/skills/bin/cli.mjs');
 const remark = join(source, 'node_modules/remark-cli/cli.js');
+const checkSkills = join(source, 'scripts/check-skills.mjs');
 const config = join(source, '.remarkrc.json');
 const agents = ['claude-code', 'codex', 'qoder'];
 const destinations = ['.claude/skills', '.agents/skills', '.qoder/skills'];
@@ -79,27 +80,35 @@ try {
       for (const path of preserved) {
         assert.equal(await readFile(join(project, path), 'utf8'), `Unrelated content: ${path}\n`);
       }
-      // Only the selected, installed files are available to resolve references.
+      // Each installed skill must be self-contained and name only selected skills.
       const installedEntries = selection.map((name) => join('.agents/skills', name));
-      run(remark, [...installedEntries, '--rc-path', config, '--frail', '--no-stdout', '--quiet'], project);
+      const remarkArgs = [...installedEntries, '--rc-path', config, '--frail', '--no-stdout', '--quiet'];
+      const checkArgs = [join(project, '.agents/skills'), ...selection];
+      run(remark, remarkArgs, project);
+      run(checkSkills, checkArgs, project);
       console.log(`Passed ${label} ${copy ? 'copy' : 'symlink'} install: ${selection.length} skills, 3 agents.`);
 
       if (label === 'docs' && copy) {
         const entry = join(project, '.agents/skills/luminekit-docs-review/SKILL.md');
         const original = await readFile(entry, 'utf8');
         await writeFile(entry, `${original}\n[Broken anchor](references/structure-and-evidence.md#missing-heading)\n`);
-        const invalidAnchor = run(remark,
-          [...installedEntries, '--rc-path', config, '--frail', '--no-stdout', '--quiet'], project, 1);
-        assert.match(invalidAnchor, /missing-heading-in-file/);
+        assert.match(run(remark, remarkArgs, project, 1), /missing-heading-in-file/);
         await writeFile(entry, original);
 
-        // Give the removed shared resource an incoming link in this fixture.
-        await writeFile(entry, `${original}\n[Shared artifact handling](../luminekit-workflow/references/artifacts.md)\n`);
-        await rm(join(project, '.agents/skills/luminekit-workflow/references/artifacts.md'));
-        const missingResource = run(remark,
-          [...installedEntries, '--rc-path', config, '--frail', '--no-stdout', '--quiet'], project, 1);
-        assert.match(missingResource, /missing-file/);
-        console.log('Confirmed missing installed resources and cross-file anchors fail validation.');
+        await writeFile(entry, `${original}\n[Shared artifacts](../luminekit-workflow/references/artifacts.md)\n`);
+        assert.match(run(checkSkills, checkArgs, project, 1), /Link leaves the skill folder/);
+        await writeFile(entry, `${original}\nUse the \`luminekit-engineering-plan\` skill.\n`);
+        assert.match(run(checkSkills, checkArgs, project, 1), /unknown or unselected skill: luminekit-engineering-plan/);
+        await writeFile(entry, original);
+
+        const orphan = join(project, '.agents/skills/luminekit-docs-review/references/orphan.md');
+        await writeFile(orphan, '# Orphan\n');
+        assert.match(run(checkSkills, checkArgs, project, 1), /orphan\.md: Not reachable/);
+        await rm(orphan);
+
+        await rm(join(project, '.agents/skills/luminekit-docs-review/references/reading-cost.md'));
+        assert.match(run(remark, remarkArgs, project, 1), /missing-file/);
+        console.log('Confirmed out-of-folder links, unselected names, unreachable files, missing resources and anchors fail validation.');
       }
     }
   }
