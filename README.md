@@ -1,6 +1,6 @@
 # LumineKit
 
-LumineKit provides reusable skills for working with AI agents on documentation, engineering and selected business tasks. The skills share a proportional Understand → Plan → Execute → Review → Release workflow.
+LumineKit provides reusable skills for working with AI agents on documentation, engineering and selected business tasks. Most skills share a proportional Understand → Plan → Execute → Review → Release workflow.
 
 The collection lives in `skills/` and uses the [Agent Skills format](https://agentskills.io/specification). Install it with the [Vercel skills CLI](https://github.com/vercel-labs/skills); no LumineKit application or server is required.
 
@@ -29,7 +29,7 @@ npx skills add /path/to/luminekit --list
 npx skills add /path/to/luminekit --skill '*' -a codex
 ```
 
-Install complete skill folders, including `references/`. Keep their folder names and sibling layout intact. The recommended full install includes all 20 skills. Each skill folder is self-contained and names the other skills it hands off to, such as Workflow; selecting one skill does not automatically install those siblings. Named external skills must be resolved separately in the receiving environment.
+Install complete skill folders, including `references/`. Keep their folder names and sibling layout intact. The recommended full install includes all 21 skills. Each skill folder is self-contained and names the other skills it hands off to, such as Workflow; selecting one skill does not automatically install those siblings. Named external skills must be resolved separately in the receiving environment.
 
 For a smaller documentation collection, install these five skills together:
 
@@ -48,11 +48,19 @@ npx skills add arxbombus/luminekit \
   --skill luminekit-agent-skills-maintainence luminekit-workflow
 ```
 
+For a standalone interview skill:
+
+```sh
+npx skills add arxbombus/luminekit --skill luminekit-grill
+```
+
 ## Use
 
 Ask for the task you want to complete, naming a skill when useful. For example: “Use `luminekit-engineering-plan` to help me plan this feature.” In Codex, an installed skill can also be invoked as `$luminekit-engineering-plan`. When native discovery is unavailable, a file-capable agent can read the named skill’s `SKILL.md` in its installed folder.
 
 The workflow is applied once per task. Specialists reuse the current context and load supporting references only when relevant. The skills do not provide external tools, credentials, company policies or approval authority; those come from the actual environment and task.
+
+Grill works independently of Workflow and returns clarified intent and decisions in the reply. You can also invoke it directly: “Use `luminekit-grill` to grill me on this plan.” Saved documentation and implementation require their own requested scope.
 
 The installer supports Claude Code, Codex and Qoder. Installing files does not establish identical behavior in every client; verify the workflows you rely on in your actual agent and version.
 
@@ -61,6 +69,7 @@ The installer supports Claude Code, Codex and Qoder. Installing files does not e
 | Task | Skill |
 | --- | --- |
 | Coordinate work through the five-stage workflow | [luminekit-workflow](skills/luminekit-workflow/SKILL.md) |
+| Interview the user to clarify a plan, decision or idea | [luminekit-grill](skills/luminekit-grill/SKILL.md) |
 | Create, revise, audit or retire agent skills in any project | [luminekit-agent-skills-maintainence](skills/luminekit-agent-skills-maintainence/SKILL.md) |
 | Review documentation | [luminekit-docs-review](skills/luminekit-docs-review/SKILL.md) |
 | Establish or migrate documentation navigation | [luminekit-docs-adopt](skills/luminekit-docs-adopt/SKILL.md) |
@@ -104,7 +113,7 @@ npm run skills:list
 npm test
 ```
 
-`npm run check` validates skill frontmatter and that each skill is self-contained: no local Markdown link leaves its folder, every bundled file is reachable from its `SKILL.md`, and every named `luminekit-*` skill exists. It also validates local Markdown links and heading anchors using remark. It does not fetch external websites, resolve external skill availability or prove agent behavior. `npm run skills:list` verifies discovery using the pinned skills CLI. `npm test` also tests full, documentation-only and authoring-skill installations into temporary projects, using both symlinks and copies for Claude Code, Codex and Qoder. It checks installed file contents, that each selection includes the collection skills it names and preservation of unrelated files.
+`npm run check` validates skill frontmatter and that each skill is self-contained: no local Markdown link leaves its folder, every bundled file is reachable from its `SKILL.md`, and every named `luminekit-*` skill exists. It also validates local Markdown links and heading anchors using remark. It does not fetch external websites, resolve external skill availability or prove agent behavior. `npm run skills:list` verifies discovery using the pinned skills CLI. `npm test` also tests full, documentation-only, authoring-skill and standalone Grill installations into temporary projects, using both symlinks and copies for Claude Code, Codex and Qoder. It checks installed file contents, that each selection includes the collection skills it names and preservation of unrelated files.
 
 Development dependencies pin patched `glob` and `minimatch` versions through npm overrides while upstream tools still request older versions. Recheck those overrides when updating the validation tools.
 

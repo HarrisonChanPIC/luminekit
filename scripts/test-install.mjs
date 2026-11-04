@@ -17,6 +17,7 @@ const docs = [
   'luminekit-docs-maintain', 'luminekit-continue',
 ];
 const authoring = ['luminekit-agent-skills-maintainence', 'luminekit-workflow'];
+const grill = ['luminekit-grill'];
 const all = (await readdir(join(source, 'skills'), { withFileTypes: true }))
   .filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
 const temporary = await mkdtemp(join(tmpdir(), 'luminekit-install-'));
@@ -42,7 +43,7 @@ async function files(directory) {
 }
 
 try {
-  for (const [label, selection] of [['full', all], ['docs', docs], ['authoring', authoring]]) {
+  for (const [label, selection] of [['full', all], ['docs', docs], ['authoring', authoring], ['grill', grill]]) {
     for (const copy of [false, true]) {
       const project = join(temporary, `${label}-${copy ? 'copy' : 'symlink'}`);
       await mkdir(project);
