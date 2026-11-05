@@ -29,7 +29,7 @@ npx skills add /path/to/luminekit --list
 npx skills add /path/to/luminekit --skill '*' -a codex
 ```
 
-Install complete skill folders, including `references/`. Keep their folder names and sibling layout intact. The recommended full install includes all 22 skills. Each skill folder is self-contained and names the other skills it hands off to, such as Workflow; selecting one skill does not automatically install those siblings. Named external skills must be resolved separately in the receiving environment.
+Install complete skill folders, including `references/`. Keep their folder names and sibling layout intact. The recommended full install includes all 23 skills. Each skill folder is self-contained and names the other skills it hands off to, such as Workflow; selecting one skill does not automatically install those siblings. Named external skills must be resolved separately in the receiving environment.
 
 For a smaller documentation collection, install these seven skills together:
 
@@ -54,6 +54,14 @@ For a standalone interview skill:
 npx skills add arxbombus/luminekit --skill luminekit-grill
 ```
 
+For task tracking, install Tasks and Workflow together:
+
+```sh
+npx skills add arxbombus/luminekit --skill luminekit-tasks luminekit-workflow
+```
+
+Tasks currently supplies a Backlog.md backend reference. It uses your existing board and installed Backlog tools; it does not install a task application. Capture, review, updates, closure and recurring work run on request in an ordinary agent session. Add the domain skills needed to perform the actual work separately.
+
 ## Use
 
 Ask for the task you want to complete, naming a skill when useful. For example: “Use `luminekit-engineering-plan` to help me plan this feature.” In Codex, an installed skill can also be invoked as `$luminekit-engineering-plan`. When native discovery is unavailable, a file-capable agent can read the named skill’s `SKILL.md` in its installed folder.
@@ -71,6 +79,7 @@ The installer supports Claude Code, Codex and Qoder. Installing files does not e
 | Coordinate work through the five-stage workflow | [luminekit-workflow](skills/luminekit-workflow/SKILL.md) |
 | Interview the user to clarify a plan, decision or idea | [luminekit-grill](skills/luminekit-grill/SKILL.md) |
 | Create, revise, audit or retire agent skills in any project | [luminekit-agent-skills-maintenance](skills/luminekit-agent-skills-maintenance/SKILL.md) |
+| Capture, organize, review or close commitments; reconcile recurring work on request | [luminekit-tasks](skills/luminekit-tasks/SKILL.md) |
 | Author/read knowledge, find and record facts in a work folder, establish catalogs or restructure documentation | [luminekit-docs](skills/luminekit-docs/SKILL.md) |
 | Review documentation | [luminekit-docs-review](skills/luminekit-docs-review/SKILL.md) |
 | Configure knowledge/workspace locations, catalogs and attribution | [luminekit-setup](skills/luminekit-setup/SKILL.md) |

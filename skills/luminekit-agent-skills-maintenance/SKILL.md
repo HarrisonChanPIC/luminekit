@@ -20,6 +20,7 @@ For a proposed behavioral rule or uncertain rewrite, observe a realistic task wi
 
 - Assume a capable agent. Give outcomes and decision criteria; use fixed sequences or deterministic mechanics where deviation has a concrete cost. Retain non-obvious invariants and distinctions.
 - Give each rule one owner. Keep only text that changes a decision; preserve information when consolidating duplicates. Prefer positive targets and observable conditions over prohibitions with exemptions.
+- Keep research narration, implementation history and test reports outside shipped guidance. State the resulting instructions, commands and reusable information directly.
 - Name a sibling or external skill and the procedure needed at the point of dependency, in backticks rather than a link. Resolve the named dependency in the actual environment; naming it does not bundle or install it. A missing dependency leaves that part pending, while supported work continues.
 - Leave skill selection, follow-on routing, work locations and project-check discovery to the agent and actual environment. Add a routing pointer only for an observed missed route.
 - Make the name and description concise and discriminating: identify the capability and when it applies, with a boundary where nearby tasks could be confused. Keep detailed modes, tools and workflows in the body or relevant resources. A hard size ceiling is not an authoring target.

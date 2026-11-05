@@ -10,4 +10,4 @@ For agent-skill creation, maintenance, audit or retirement, follow `luminekit-ag
 
 Run `mise run test` after changes; it includes locked Python lint/format, metadata/bundle/name, local Markdown links/anchors, OKF fixtures and regression checks. Installation matrices and distribution smoke checks are excluded by the user's direction. Report actual checks separately from unexercised agent behavior. Do not publish, push or create a release unless requested.
 
-Local work uses root `.agent-workspacespace/`, ignored from distribution. Keep each real initiative's entry compact and link focused plans/evidence. Current project guidance remains usable without that local state.
+Local work uses root `.agent-workspace/`, ignored from distribution. Keep each real initiative's entry compact and link focused plans/evidence. Current project guidance remains usable without that local state.
