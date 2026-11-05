@@ -1,0 +1,7 @@
+# Pinned OKF checker
+
+`okf_validate.py` is copied unchanged from [scaccogatto/okf-skills revision 49f8fb4987989b7a443ce278c6aa68ba0493b51f](https://github.com/scaccogatto/okf-skills/blob/49f8fb4987989b7a443ce278c6aa68ba0493b51f/skills/validate/scripts/okf_validate.py). Its upstream tests are retained in `tests/vendor/test_okf_validate.py`, with only their import location adapted. See [MIT license](OKF-LICENSE).
+
+Run through the locked project environment with `uv run --locked python scripts/vendor/okf_validate.py tests/fixtures/okf/valid --json`. Do not use its script-mode dependency resolution, `--strict`, `--max-warnings` or `--migrate` in repository gates. Warnings are advisory; no network access or writes are needed for checks.
+
+The canonical [OKF v0.2 specification](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) is authoritative. This revision reports reserved-file violations as warnings and permits extra root-index fields absent from the specification. `check_links.py --bundle-root` supplies the selected reserved-structure checks; regression tests cover these differences. The upstream timestamp checks also tolerate less precise dates. This checker does not certify every optional-family semantic rule, source truth, freshness, runtime attestation or reader behavior. Initial CI OKF coverage is the named regression fixtures, not a production bundle.

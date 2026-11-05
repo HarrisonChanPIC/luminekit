@@ -2,7 +2,7 @@
 
 Use a representative task and its actual guidance units. Identify client/read mechanism, trace origin, path/content versions and inaccessible/unmeasured contributions. Charge a whole file when the host loads it even if a pointer names one section; a theoretical selector does not prove bounded retrieval.
 
-Assess the `luminekit-docs-adopt` rule to place content by reader task even below diagnostic thresholds: independent tasks and historical narrative can burden a short entry. Follow only the selected branch and required dependencies, rather than loading every link for a total.
+Assess the `luminekit-docs` rule to place content by reader task even below diagnostic thresholds: independent tasks and historical narrative can burden a short entry. Follow only the selected branch and required dependencies, rather than loading every link for a total.
 
 Separate distinct required guidance, repeated reads/injections, discovery metadata, host baseline and primary evidence. Keep the declared unit consistent. Unknown host cost is unknown, not zero; Unicode characters, bytes and tokens are different quantities. Equal character counts across languages do not establish equal tokens or quality. Report time/tokens only when actually measured for the stated client/settings/scope.
 

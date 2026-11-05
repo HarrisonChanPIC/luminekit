@@ -6,6 +6,8 @@ description: Capture otherwise missing unfinished state at a session/person boun
 
 # Continue from verifiable state
 
+When recovering an OKF note, use the OKF-reading procedure of `luminekit-docs`. For capture, use its authoring procedure only when provenance/lifecycle tracking helps the reader; ordinary scratch needs no mandatory frontmatter. Preserve native memory writer types and unknown keys. These procedure calls do not start project setup or claim native memory integration.
+
 Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Capture or recover only the unfinished state current docs/artifacts/tracker cannot reconstruct. A checkpoint is a dated lead; current sources and user corrections govern. If existing owners suffice, return their pointers without creating a duplicate packet.

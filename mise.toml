@@ -1,5 +1,5 @@
 [tools]
-node = "22.22.2"
+uv = "0.12.5"
 lefthook = "2.1.11"
 cocogitto = "7.0.0"
 
@@ -10,24 +10,28 @@ run = "lefthook install"
 
 [tasks.deps]
 description = "Install pinned development dependencies"
-run = "npm ci --ignore-scripts"
+run = "uv sync --locked"
 
 [tasks."check-commits"]
 description = "Check commit history for Conventional Commits"
 run = "cog check"
 
 [tasks.check]
-description = "Validate skill metadata and local Markdown links and anchors"
-run = "npm run check"
-
-[tasks."skills-list"]
-description = "List skills discovered by the pinned skills CLI"
-run = "npm run skills:list"
+description = "Validate Python utilities, skill bundles, Markdown routes and OKF fixtures"
+run = [
+    "uv run --locked ruff check scripts tests",
+    "uv run --locked ruff format --check scripts tests",
+    "uv run --locked python scripts/check_skills.py",
+    "uv run --locked python scripts/check_links.py",
+    "uv run --locked python scripts/vendor/okf_validate.py tests/fixtures/okf/valid --json",
+    "uv run --locked python scripts/check_links.py tests/fixtures/okf/valid --bundle-root tests/fixtures/okf/valid",
+]
 
 [tasks.test]
-description = "Validate content and test installations in temporary projects"
-run = "npm test"
+description = "Validate content and run repository regression tests"
+depends = ["check"]
+run = "uv run --locked python -m unittest discover -s tests"
 
 [tasks."check-all"]
-description = "Run content, installation and commit-history checks"
+description = "Run content, regression and commit-history checks"
 depends = ["test", "check-commits"]

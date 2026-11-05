@@ -10,6 +10,8 @@ Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Inspect the selected reader task and available documentation/source revisions. Review-only returns findings; apply fixes only when separately within the task's scope.
 
+For OKF input, use the OKF-reading procedure of `luminekit-docs`, and its catalog/computation procedures only when relevant. Resolve those resources directly; reviewing a concept does not start project setup or authorize edits. Check actual source dereferencing and complete reading paths separately from metadata conformance.
+
 | Concern | Procedure |
 | --- | --- |
 | Mixed reader tasks, unnecessary inline material, links/anchors or declared owners | [Structure and evidence](references/structure-and-evidence.md) |

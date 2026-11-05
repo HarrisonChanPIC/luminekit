@@ -4,7 +4,7 @@ Read only the owners/dependencies required by the selected reader task. Unclear 
 
 ## Disclosure and ownership
 
-Apply the `luminekit-docs-adopt` rule to place content by reader task regardless of document size. Check for substantive task details embedded in entries, independently needed concerns in one compulsory read unit, duplicated rules, and contextual history or work evidence in current guidance. A heading link into the same compulsory monolith does not establish extraction. Also check for fragmented procedures, empty navigation layers and unnecessary hops.
+Apply the `luminekit-docs` rule to place content by reader task regardless of document size. Check for substantive task details embedded in entries, independently needed concerns in one compulsory read unit, duplicated rules, and contextual history or work evidence in current guidance. A heading link into the same compulsory monolith does not establish extraction. Also check for fragmented procedures, empty navigation layers and unnecessary hops.
 
 Follow the selected task's branch and required dependencies rather than prefetching every link. Current guidance must work without historical originals or ignored work files. An exception, prerequisite or recovery step needed for the action belongs at the point of use or behind an explicit required dependency; moving it out of sight is not a disclosure improvement. Classifying operative guidance as evidence does not excuse a hidden dependency.
 

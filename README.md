@@ -29,17 +29,17 @@ npx skills add /path/to/luminekit --list
 npx skills add /path/to/luminekit --skill '*' -a codex
 ```
 
-Install complete skill folders, including `references/`. Keep their folder names and sibling layout intact. The recommended full install includes all 21 skills. Each skill folder is self-contained and names the other skills it hands off to, such as Workflow; selecting one skill does not automatically install those siblings. Named external skills must be resolved separately in the receiving environment.
+Install complete skill folders, including `references/`. Keep their folder names and sibling layout intact. The recommended full install includes all 22 skills. Each skill folder is self-contained and names the other skills it hands off to, such as Workflow; selecting one skill does not automatically install those siblings. Named external skills must be resolved separately in the receiving environment.
 
-For a smaller documentation collection, install these five skills together:
+For a smaller documentation collection, install these seven skills together:
 
 ```sh
 npx skills add arxbombus/luminekit \
-  --skill luminekit-workflow luminekit-docs-adopt luminekit-docs-review \
-  luminekit-docs-maintain luminekit-continue
+  --skill luminekit-workflow luminekit-setup luminekit-docs luminekit-docs-review \
+  luminekit-docs-maintain luminekit-continue luminekit-arena
 ```
 
-This selection includes every skill the documentation skills name. For other custom selections, also include the collection skills named by the selected skills.
+This selection includes every skill the documentation skills name, including Arena's conditional orchestration procedure used by Setup. For other custom selections, also include the collection skills named by the selected skills.
 
 To create or maintain agent skills in any project, install the authoring skill with Workflow and Arena's independent-run procedure:
 
@@ -71,8 +71,9 @@ The installer supports Claude Code, Codex and Qoder. Installing files does not e
 | Coordinate work through the five-stage workflow | [luminekit-workflow](skills/luminekit-workflow/SKILL.md) |
 | Interview the user to clarify a plan, decision or idea | [luminekit-grill](skills/luminekit-grill/SKILL.md) |
 | Create, revise, audit or retire agent skills in any project | [luminekit-agent-skills-maintainence](skills/luminekit-agent-skills-maintainence/SKILL.md) |
+| Author/read knowledge, establish catalogs or restructure documentation | [luminekit-docs](skills/luminekit-docs/SKILL.md) |
 | Review documentation | [luminekit-docs-review](skills/luminekit-docs-review/SKILL.md) |
-| Establish or migrate documentation navigation | [luminekit-docs-adopt](skills/luminekit-docs-adopt/SKILL.md) |
+| Configure knowledge/workspace locations, catalogs and attribution | [luminekit-setup](skills/luminekit-setup/SKILL.md) |
 | Maintain documentation and close work | [luminekit-docs-maintain](skills/luminekit-docs-maintain/SKILL.md) |
 | Capture or resume missing work context | [luminekit-continue](skills/luminekit-continue/SKILL.md) |
 | Explain code or trace a proposed change's impact | [luminekit-engineering-understand](skills/luminekit-engineering-understand/SKILL.md) |
@@ -102,26 +103,23 @@ Use `-g` for global installations when updating or removing. Review changes befo
 
 ## Development
 
-Edit `skills/` directly. Node dependencies are development tools only; recipients need neither this repository's development setup nor a LumineKit executable.
-
-For skill authoring and maintenance, follow `luminekit-agent-skills-maintainence`; repository-specific conventions remain in [AGENTS.md](AGENTS.md).
+Edit `skills/` directly. Repository checks use uv-managed Python 3.14; their dependencies and lock are development tools, separate from the Node-based external installation CLI. Follow `luminekit-agent-skills-maintainence` for skill changes and [AGENTS.md](AGENTS.md) for project rules.
 
 ```sh
-npm ci --ignore-scripts
-npm run check
-npm run skills:list
-npm test
+uv sync --locked
+mise run check
+mise run test
 ```
 
-`npm run check` validates skill frontmatter and that each skill is self-contained: no local Markdown link leaves its folder, every bundled file is reachable from its `SKILL.md`, and every named `luminekit-*` skill exists. It also validates local Markdown links and heading anchors using remark. It does not fetch external websites, resolve external skill availability or prove agent behavior. `npm run skills:list` verifies discovery using the pinned skills CLI. `npm test` also tests full, documentation-only, authoring-skill and standalone Grill installations into temporary projects, using both symlinks and copies for Claude Code, Codex and Qoder. It checks installed file contents, that each selection includes the collection skills it names and preservation of unrelated files.
+`mise run check` runs the same locked commands as CI: Ruff lint/format checks, skill metadata/name/license and bundle closure checks, local Markdown links/ordinary heading anchors, and the pinned OKF checker plus reserved-file checks on `tests/fixtures/okf/valid`. `mise run test` adds standard-library regression tests, including the upstream OKF tests. No installation matrix or distribution smoke test runs.
 
-Development dependencies pin patched `glob` and `minimatch` versions through npm overrides while upstream tools still request older versions. Recheck those overrides when updating the validation tools.
+Without mise, run the individual commands in [mise.toml](mise.toml). `scripts/check_skills.py [skills-root] [skill-name ...]` checks only selected siblings when names are given. Every resource must be reachable from its `SKILL.md`; links and resource symlinks stay within the bundle. `scripts/check_links.py [paths ...]` checks actual Markdown links/images, reference links and ordinary headings, including Unicode/punctuation and duplicate suffixes. It ignores fenced/inline code and external URL availability. HTML/generated anchors and renderer-specific heading extensions are outside its coverage. For an OKF bundle, `--bundle-root PATH` resolves leading-slash paths against that bundle and checks reserved index/log structures; maintained-route link policy is stricter than OKF's tolerant consumer contract.
 
-[mise.toml](mise.toml) pins Node and the optional Git tooling. With mise, run `mise install` and `mise run setup` to install development dependencies and local Lefthook hooks. `mise run check` runs content checks; `mise run test` also tests installations. [lefthook.yaml](lefthook.yaml) runs content checks before commits, installation tests before pushes and Conventional Commit message checks with Cocogitto. Installation does not register these development hooks in receiving projects.
+Initial OKF CI coverage is explicit developer fixtures, not a tracked production knowledge bundle. Missing optional metadata and unknown types/keys are accepted; warnings remain advisory. The [vendored checker notice](scripts/vendor/README.md) records its revision, MIT license and limitations. Checks do not rewrite docs, install consumer validators, fetch linked websites or prove retrieval, freshness, native loading or runtime attestation.
 
-[GitHub Actions](.github/workflows/check.yml) runs `npm test` on pushes and pull requests.
+[mise.toml](mise.toml) pins uv and optional Git tooling. Run `mise install` and `mise run setup` to install development dependencies and local Lefthook hooks. [lefthook.yaml](lefthook.yaml) runs content checks before commits, regression tests before pushes and Conventional Commit message checks with Cocogitto. These hooks are not installed in receiving projects by the skills. [GitHub Actions](.github/workflows/check.yml) runs the same check/test tasks on pushes and pull requests.
 
-The Git repository is the distribution source. Publish reviewed source changes to make them available through the remote install commands; no npm package publication is needed. Keep [AGENTS.md](AGENTS.md) aligned with the source layout.
+The Vercel CLI remains an external distribution tool. Use the installation commands above when you choose to install; source checks do not require Node. The Git repository is the distribution source; no npm package publication is needed.
 
 ## License
 

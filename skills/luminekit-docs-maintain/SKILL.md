@@ -12,6 +12,8 @@ Update the existing owner after a confirmed change, reconcile current/proposed k
 
 Preserve focused owners and concise routes during ordinary updates. Place independently needed additions in their task owner before expanding an entry; keep contextual history and work evidence outside current guidance. [Owner updates](references/owner-updates.md) applies the shared placement procedure.
 
+For OKF owners, use the reading/authoring procedures of `luminekit-docs`. Search before duplicate creation; preserve unknown metadata and adequate descriptions, qualify verification after changed claims, and update affected index routes/provenance with the authorized change. Update the small project catalog when a used convention changes; load the computation procedure only for that document family. Routine upkeep does not restart project setup or introduce custom fields.
+
 | Work | Procedure |
 | --- | --- |
 | Promote/reconcile changed facts, future terms or current/proposed state | [Owner updates](references/owner-updates.md) |

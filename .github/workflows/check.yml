@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version-file: mise.toml
-          cache: npm
-      - run: npm ci --ignore-scripts
-      - run: npm test
+      - uses: jdx/mise-action@v3
+      - run: uv sync --locked
+      - run: mise run test
