@@ -16,7 +16,7 @@ const docs = [
   'luminekit-workflow', 'luminekit-docs-adopt', 'luminekit-docs-review',
   'luminekit-docs-maintain', 'luminekit-continue',
 ];
-const authoring = ['luminekit-agent-skills-maintainence', 'luminekit-workflow'];
+const authoring = ['luminekit-agent-skills-maintainence', 'luminekit-workflow', 'luminekit-arena'];
 const grill = ['luminekit-grill'];
 const all = (await readdir(join(source, 'skills'), { withFileTypes: true }))
   .filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();

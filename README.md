@@ -41,11 +41,11 @@ npx skills add arxbombus/luminekit \
 
 This selection includes every skill the documentation skills name. For other custom selections, also include the collection skills named by the selected skills.
 
-To create or maintain agent skills in any project, install the authoring skill with Workflow:
+To create or maintain agent skills in any project, install the authoring skill with Workflow and Arena's independent-run procedure:
 
 ```sh
 npx skills add arxbombus/luminekit \
-  --skill luminekit-agent-skills-maintainence luminekit-workflow
+  --skill luminekit-agent-skills-maintainence luminekit-workflow luminekit-arena
 ```
 
 For a standalone interview skill:

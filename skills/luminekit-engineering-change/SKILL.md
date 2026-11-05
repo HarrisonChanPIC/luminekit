@@ -10,6 +10,8 @@ Follow the `luminekit-workflow` skill within this skill’s scope.
 
 Use actual repository conventions; preserve behavior outside scope and meaningful error, cancellation and resource semantics.
 
+Keep existing projects on their declared language/runtime versions and established tooling. Do not upgrade or replace those as part of an ordinary implementation change. For new projects, use current stable language/tooling defaults from the relevant language guide; new Python projects require uv and Python 3.14 or newer.
+
 | Concern | Procedure |
 | --- | --- |
 | Substantive feature/fix, refactor, migration or prototype | [Change kinds](references/change-kinds.md) |
@@ -17,7 +19,7 @@ Use actual repository conventions; preserve behavior outside scope and meaningfu
 | Independent expectations, meaningful checks or source/build correspondence | [Verification](references/verification.md) |
 | Implementing an agreed plan with multiple units | [Unit review](references/unit-review.md) |
 | Unexplained failure or repeated ineffective changes | The `luminekit-diagnose` skill; use its recovery branch when continued state is uncertain |
-| Language-specific behavior | Only relevant [Python](references/python.md), [TypeScript](references/typescript.md) or [Go](references/go.md) guidance |
+| Language-specific behavior | Only relevant [Python](references/python.md), [TypeScript](references/typescript.md), [Go](references/go.md) or [C#](references/csharp.md) guidance |
 
 Inspect the actual final diff/result and run applicable project gates.
 
