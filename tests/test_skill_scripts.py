@@ -9,7 +9,6 @@ import os
 import sys
 import tempfile
 import unittest
-from decimal import Decimal
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -138,32 +137,24 @@ SAMPLE = {
         "valid_until": "December 5, 2026",
     },
     "currency": "PHP",
-    "vat": {"basis": "exclusive", "rate": "0.12"},
+    "vat_basis": "exclusive",
     "items": [
-        {
-            "title": "Widget",
-            "detail": "Delivered.",
-            "charge": "one-time",
-            "unit_price": "1000.005",
-            "quantity": 3,
-        },
-        {
-            "title": "Support",
-            "charge": "recurring",
-            "period": "year",
-            "unit_price": "500.00",
-            "quantity": 1,
-            "unit": "/ yr",
-        },
+        {"title": "Down payment", "total": "300000"},
+        {"title": "Year 1 monthly", "unit_price": "50000", "quantity": 12, "total": "600000"},
         {
             "title": "Later support",
-            "charge": "recurring",
-            "period": "year",
-            "price_note": "CPI + 2%",
-            "quantity": 1,
+            "detail": "Index-linked.",
+            "unit_price": "CPI + 2%",
+            "quantity": "1",
+            "unit": "/ yr",
+            "total": "Variable",
         },
     ],
-    "remarks": ["Prices exclude VAT."],
+    "summary": [
+        {"label": "The down payment applies from Year 2 onward."},
+        {"label": "Total: ", "amount": "PHP 900,000", "suffix": " (VAT Exclusive)"},
+    ],
+    "extra_remarks": ["Prices exclude installation."],
     "payment_terms": "Payment due within 30 days.",
     "signatories": {
         "issuer": [
@@ -192,9 +183,13 @@ def text_of(path):
 
 
 class Quotation(unittest.TestCase):
-    def totals(self, data):
-        totals, variable = fq.compute(fq.validate(copy.deepcopy(data)))
-        return {t["group"]: t for t in totals}, variable
+    def check(self, data):
+        return fq.validate(copy.deepcopy(data))
+
+    def refused(self, data):
+        with self.assertRaises(fq.InputError) as caught:
+            fq.validate(copy.deepcopy(data))
+        return str(caught.exception)
 
     def test_template_has_no_source_quotation_data(self):
         text = text_of(TEMPLATE)
@@ -215,24 +210,75 @@ class Quotation(unittest.TestCase):
             self.assertNotIn(leaked, text)
         self.assertIn("{{customer_name}}", text)
 
-    def test_exclusive_totals_round_half_up_and_keep_groups_apart(self):
-        groups, variable = self.totals(SAMPLE)
-        self.assertEqual(groups["one-time"]["net"], Decimal("3000.02"))  # 3000.015
-        self.assertEqual(groups["one-time"]["vat"], Decimal("360.00"))
-        self.assertEqual(groups["one-time"]["gross"], Decimal("3360.02"))
-        self.assertEqual(groups["recurring per year"]["net"], Decimal("500.00"))
-        self.assertEqual(variable, [3])
+    def test_items_display_numbers_and_text_and_check_arithmetic(self):
+        items = self.check(SAMPLE)["items"]
+        self.assertEqual(items[0]["total"], "300,000.00")
+        self.assertEqual(items[0]["unit_price"], "")
+        self.assertFalse(items[0]["checked"])
+        self.assertTrue(items[1]["checked"])
+        self.assertEqual(items[2]["unit_price"], "CPI + 2%")
+        self.assertEqual(
+            self.check(
+                {
+                    **SAMPLE,
+                    "items": [
+                        {
+                            "title": "Odd",
+                            "unit_price": "1000.005",
+                            "quantity": 3,
+                            "total": "3000.02",
+                        }
+                    ],
+                }
+            )["items"][0]["unit_price"],
+            "1,000.005",
+        )
 
-    def test_inclusive_basis_extracts_vat(self):
         data = copy.deepcopy(SAMPLE)
-        data["vat"]["basis"] = "inclusive"
-        data["items"] = [
-            {"title": "Box", "charge": "one-time", "unit_price": "1120", "quantity": 1}
-        ]
-        groups, _ = self.totals(data)
-        self.assertEqual(groups["one-time"]["gross"], Decimal("1120"))
-        self.assertEqual(groups["one-time"]["vat"], Decimal("120.00"))
-        self.assertEqual(groups["one-time"]["net"], Decimal("1000.00"))
+        data["items"][1]["total"] = "610000"
+        self.assertIn("items[2]: unit_price 50000 x quantity 12", self.refused(data))
+        data["items"][1]["total"] = 600000.0
+        self.assertIn("not a float", self.refused(data))
+
+    def test_standard_remarks_by_default_with_extras_before_payment(self):
+        remarks = self.check(SAMPLE)["remarks"]
+        self.assertEqual(len(remarks), 6)
+        self.assertIn("Philippine Pesos (PHP) and are exclusive of taxes", remarks[0])
+        self.assertIn("valid before December 5, 2026.", remarks[0])
+        self.assertIn("master agreement", remarks[3])
+        self.assertEqual(remarks[4], "Prices exclude installation.")
+        self.assertEqual(remarks[5], "Payment Terms: Payment due within 30 days.")
+        data = copy.deepcopy(SAMPLE)
+        del data["payment_terms"]
+        self.assertEqual(
+            self.check(data)["remarks"][-1], "Payment Terms: As stipulated in the Agreement."
+        )
+
+    def test_without_master_agreement_payment_terms_are_required(self):
+        data = copy.deepcopy(SAMPLE)
+        data["master_agreement"] = False
+        self.assertFalse(any("master agreement" in r for r in self.check(data)["remarks"]))
+        del data["payment_terms"]
+        self.assertIn("payment_terms", self.refused(data))
+
+    def test_standard_remarks_need_their_values(self):
+        data = copy.deepcopy(SAMPLE)
+        data["currency"] = "SGD"
+        del data["quotation"]["valid_until"]
+        del data["vat_basis"]
+        message = self.refused(data)
+        for expected in ("currency_name", "valid_until", "vat_basis"):
+            self.assertIn(expected, message)
+
+    def test_explicit_remarks_replace_the_defaults(self):
+        data = copy.deepcopy(SAMPLE)
+        for key in ("extra_remarks", "payment_terms", "vat_basis"):
+            del data[key]
+        del data["quotation"]["valid_until"]
+        data["remarks"] = ["Only this."]
+        self.assertEqual(self.check(data)["remarks"], ["Only this."])
+        data["extra_remarks"] = ["x"]
+        self.assertIn("extra_remarks", self.refused(data))
 
     def test_issuer_needs_exactly_two_signatories(self):
         for count in (1, 3):
@@ -240,20 +286,15 @@ class Quotation(unittest.TestCase):
             data["signatories"]["issuer"] = [
                 {"role": "Role", "name": f"N{n}"} for n in range(count)
             ]
-            with self.assertRaises(fq.InputError) as caught:
-                fq.validate(data)
-            self.assertIn("exactly 2", str(caught.exception))
+            self.assertIn("exactly 2", self.refused(data))
 
-    def test_missing_and_invalid_inputs_are_refused_together(self):
+    def test_missing_inputs_are_refused_together(self):
         data = copy.deepcopy(SAMPLE)
-        del data["vat"]["rate"]
         del data["customer"]["name"]
-        data["items"][0]["unit_price"] = 1000.5
-        del data["items"][1]["period"]
-        with self.assertRaises(fq.InputError) as caught:
-            fq.validate(data)
-        message = str(caught.exception)
-        for expected in ("vat.rate", "customer.name", "not a float", "items[2].period"):
+        del data["items"][1]["title"]
+        data["summary"].append({})
+        message = self.refused(data)
+        for expected in ("customer.name", "items[2].title", "summary[3]"):
             self.assertIn(expected, message)
 
     def test_filled_document_matches_inputs_and_has_no_placeholders(self):
@@ -264,19 +305,20 @@ class Quotation(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()) as printed:
                 self.assertEqual(fq.main([str(source), str(output)]), 0)
             report = json.loads(printed.getvalue())
-            self.assertEqual(report["totals"][0]["gross"], "3360.02")
+            self.assertEqual(report["summary"][1], "Total: PHP 900,000 (VAT Exclusive)")
             text = text_of(output)
             self.assertNotIn("{{", text)
             for value in (
                 "Buyer Corp.",
-                "1,000.005",
-                "3,000.02",
-                "PHP 3,360.02",
+                "(PHP, VAT Excl.)",
+                "600,000.00",
+                "12",
                 "Variable",
-                "Payment due within 30 days.",
+                "The down payment applies from Year 2 onward.",
+                "PHP 900,000",
+                "Payment Terms: Payment due within 30 days.",
                 "Head of Finance: Pat Finance",
-                "valid until December 5, 2026",
-                "VAT (12%)",
+                "deemed a reservation",
             ):
                 self.assertIn(value, text)
             with contextlib.redirect_stderr(io.StringIO()):

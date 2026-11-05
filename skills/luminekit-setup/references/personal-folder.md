@@ -12,15 +12,15 @@ Explain choices in plain language and ask together, offering a recommendation fo
 
 - **Where agent knowledge lives:** a small folder of Markdown pages that the agent reads and maintains, for example `agent-notes` at the top of the work folder. The user rarely needs to open it. Recommend a location inside the folder they already back up or sync.
 - **Naming for new files:** offer the [recommended defaults](naming-defaults.md), and adopt the user's existing habits where they already work. Record any customization. Renaming existing files is a separate request.
-- **Scratch:** where the agent keeps temporary drafts and inputs, such as a hidden `.agent-work` folder, kept apart from real documents.
+- **Organization (company work only):** for a folder of company business records with no clear organization, or when the user asks, offer the [recommended organization](folder-organization.md). Personal documents keep the user's own structure.
+- **Scratch:** where the agent keeps temporary drafts and inputs, such as a hidden `.agent-workspace` folder, kept apart from real documents.
 - **Attribution:** whether to record a name or pseudonym on agent-written pages, as in [project choices](project-choices.md#resolve-choices-once). Omitting it is fine.
-- **Instruction file:** ask whether to create one so the user's agent app finds these choices, such as `AGENTS.md` or `CLAUDE.md` in the work folder. Describe it plainly ("a short note the AI reads first"). Create it only after the user says yes; otherwise keep the choices in the knowledge folder's index and tell the user where they are.
 
 ## Create only what is real
 
 1. Create the knowledge folder with a root `index.md` following the working-knowledge procedure of `luminekit-docs`. Add an entry for each project, customer or area the user names or that the folder clearly shows, with the names people use for it.
 2. Write a page only where there is real content: what the user told you, or facts read from a document they pointed to, each with its source and date. No empty templates, placeholder pages or future sections.
-3. Record the chosen conventions (knowledge location, naming choices, scratch, attribution) on one page linked from the index, and point to it from the instruction file when one exists.
+3. Record the chosen conventions (knowledge location, naming choices, scratch, attribution) on one page linked from the index. Add the [instruction route](project-choices.md#instruction-routes) to the knowledge index, creating `AGENTS.md` in the work folder when no instruction file exists. Tell the user plainly: "a short note the AI reads first, pointing it to your notes".
 4. Optionally run the fingerprint scan from the same procedure to give later duplicate and change checks a baseline, excluding the knowledge and scratch folders.
 
 ## Check and rerun

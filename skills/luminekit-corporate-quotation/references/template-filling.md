@@ -2,32 +2,62 @@
 
 Read when a quotation document is needed. [The template](../assets/quotation-template.docx) is the company cover quotation with its customer, items, prices and dates left blank. It carries the UNI-PIPC logo, so a quotation issued by another entity needs that entity's approved template; ask before using this one. Detailed schedules, such as specifications, service levels and exclusions, are not part of the template. Prepare them separately when the offer needs them, and reference them in a remark.
 
+## Present the offer
+
+Offers charge in many ways: one-time fees, monthly or yearly fees, phased rates, down payments credited later, milestones, per-site or per-unit prices, index-linked adjustments. The script does not model any of them. Decide how the offer reads, work out every amount yourself, and give the script the values to display:
+
+- One item row per line the customer should see, with the unit price, quantity and total that fit that line. A row can leave any of them empty, such as a down payment with only a total. A non-numeric value, such as `CPI + 2%`, `Variable` or `Included`, is shown as written.
+- The totals box under the items holds whatever summary fits the offer: a contract total, separate one-time and recurring totals, VAT lines, or a note such as how a down payment is credited. Show VAT amounts only when the user wants them.
+- Keep the presentation of a comparable previous offer for the same customer when the user points to one, but take every value from the current terms.
+
+Check every amount against an independent calculation using the artifacts procedure of the `luminekit-workflow` skill, including totals that combine rows.
+
 ## Collect the inputs
 
 Ask the user for each value or take it from their recorded pages. Never borrow a value from another customer's offer, and confirm time-sensitive facts such as the VAT rate, prices and validity before filling. Write a JSON input file in the agent's temporary work location:
 
 ```json
 {
-  "issuer": {"name": "…", "tin": "…", "address": "…", "website": "…"},
+  "issuer": {"tin": "…", "address": "…", "website": "…"},
   "customer": {"name": "…", "address": "…", "contact_name": "…", "contact": "…"},
   "quotation": {"number": "…", "date": "…", "project": "…", "valid_until": "…"},
   "currency": "PHP",
-  "vat": {"basis": "exclusive", "rate": "0.12"},
+  "vat_basis": "exclusive",
   "items": [
-    {"title": "…", "detail": "…", "charge": "one-time", "unit_price": "1000.00", "quantity": 1},
-    {"title": "…", "charge": "recurring", "period": "year", "price_note": "CPI + 2%", "quantity": 1, "unit": "/ yr"}
+    {"title": "Down payment on contract signature", "total": "300000"},
+    {"title": "Year 1 monthly", "detail": "…", "unit_price": "50000", "quantity": 12, "total": "600000"}
   ],
-  "remarks": ["…"],
-  "payment_terms": "…",
+  "summary": [
+    {"label": "The down payment applies from Year 2 onward."},
+    {"label": "Five-year total: ", "amount": "PHP 3,000,000", "suffix": " (VAT Exclusive)"}
+  ],
   "signatories": {"issuer": [{"role": "…", "name": "…"}, {"role": "…", "name": "…"}], "customer": [{"role": "…", "name": "…"}]}
 }
 ```
 
-- Amounts are strings or integers, never floats. `vat.basis` is `exclusive` or `inclusive`, and `vat.rate` is a fraction. Use `"0"` only when the user confirms there is no VAT.
-- `charge` is `one-time` or `recurring`. A recurring item needs a `period` such as `year`. One-time and recurring amounts are totalled separately, and each recurring period gets its own total.
-- Use `price_note` instead of `unit_price` only for a price the offer itself leaves variable, such as an index-linked adjustment. A price not yet agreed is a missing input, not a variable price. Such items show "Variable" and are excluded from the totals, and the totals say so.
+- Amounts are strings or integers, never floats. Numeric item amounts are formatted with thousands separators and at least two decimals. When a row's unit price, quantity and total are all numeric, the script checks that they agree.
+- `vat_basis` (`exclusive` or `inclusive`) labels the price columns, such as "(PHP, VAT Excl.)". Without it the columns show only the currency.
+- Each `summary` line has a `label`, a bold `amount` and a `suffix`, any of which can be left out. They are shown exactly as written.
+- `detail`, `unit`, `no`, the customer's address and contact fields, and `summary` are optional. Leave out what the user did not give instead of inventing it.
 - Our side always signs with two signatories, so `signatories.issuer` needs exactly two people with their roles; the script refuses one or three. The customer side needs at least one.
-- `detail`, `unit` and `remarks` are optional. Payment terms become the last remark before the validity line.
+
+## Remarks
+
+Unless the input gives `remarks`, the script writes the company's standard remarks, in this order:
+
+1. The amounts stated in this quotation are in {currency name} ({currency}) and are exclusive of taxes (inclusive for an inclusive VAT basis). This quotation shall remain valid before {valid_until}.
+2. This quotation shall become effective only upon signature by the authorized signatories.
+3. Upon acceptance and return of the signed quotation by the Customer, the quotation shall be deemed a reservation. The Customer shall ensure that the signatory is duly authorized to sign on behalf of the Customer.
+4. Any terms and conditions not specified in this quotation shall be governed by the master agreement (the "Agreement") to be entered into subsequently by the parties. In the event of any inconsistency between the terms and conditions of this quotation and those of the Agreement, the terms and conditions of the Agreement shall prevail.
+5. Any `extra_remarks`, such as a reference to a separate schedule.
+6. Payment Terms: As stipulated in the Agreement.
+
+Keep these unless the user or the offer calls for something else.
+
+- The standard remarks need `quotation.valid_until` and `vat_basis`. The currency name is known for PHP, USD and TWD; give `currency_name` for any other code.
+- Clause 4 assumes a master agreement will follow. When none will, set `"master_agreement": false`: clause 4 is left out and `payment_terms` becomes required. Ask the user which applies when the offer does not say.
+- `payment_terms` replaces the default "As stipulated in the Agreement." text, for example with milestone payments.
+- To change or drop a standard clause, give `remarks` as the complete list instead. It is used exactly as written, so start from the standard wording above and edit only what the offer needs.
 
 ## Fill and check
 
@@ -37,6 +67,6 @@ Run [the fill script](../scripts/fill_quotation.py) with `uv`, which installs it
 uv run scripts/fill_quotation.py input.json "Quotation.docx"
 ```
 
-The script refuses missing or invalid inputs and lists every problem. Ask the user for those values before filling; never pass placeholder text such as "TBC" to get past the check. It never overwrites an existing file. Its JSON output gives line totals and the net, VAT and gross amount for each group. Line totals round half up to cents, and VAT is computed on each group total. Check these against an independent calculation, using the artifacts procedure of the `luminekit-workflow` skill.
+The script refuses missing or invalid inputs and lists every problem. Ask the user for those values before filling; never pass placeholder text such as "TBC" to get past the check. It never overwrites an existing file. Its JSON output echoes the displayed items, summary and remarks, and says which rows it checked arithmetically.
 
-Open the result in Word, or render it with LibreOffice (on macOS `soffice` is inside `LibreOffice.app/Contents/MacOS`), and check its layout. Quick Look previews misplace the rounded frames. The item table's rounded frame is resized from an estimate, so with unusually long descriptions check that the frame still encloses the table. The filled document is a draft. Issuing, signing and sending remain separate decisions.
+Open the result in Word, or render it with LibreOffice (on macOS `soffice` is inside `LibreOffice.app/Contents/MacOS`), and check its layout. Quick Look previews misplace the rounded frames. The item table's rounded frame is resized from an estimate, so check that it still encloses the table and totals. The quantity column is narrow: leave out a unit the item title already gives, such as months for a monthly fee. The filled document is a draft. Issuing, signing and sending remain separate decisions.
