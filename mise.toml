@@ -19,8 +19,8 @@ run = "cog check"
 [tasks.check]
 description = "Validate Python utilities, skill bundles, Markdown routes and OKF fixtures"
 run = [
-    "uv run --locked ruff check scripts tests",
-    "uv run --locked ruff format --check scripts tests",
+    "uv run --locked ruff check scripts tests skills",
+    "uv run --locked ruff format --check scripts tests skills",
     "uv run --locked python scripts/check_skills.py",
     "uv run --locked python scripts/check_links.py",
     "uv run --locked python scripts/vendor/okf_validate.py tests/fixtures/okf/valid --json",

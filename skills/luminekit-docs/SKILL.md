@@ -1,7 +1,7 @@
 ---
 name: luminekit-docs
 license: Proprietary. All rights reserved.
-description: Author missing documentation, consume OKF knowledge, establish project catalogs or restructure/migrate documentation for progressive disclosure. Use for engineering and non-engineering knowledge; initial project configuration, confirmed-change upkeep and documentation audits have their own skills.
+description: Author missing documentation, consume OKF knowledge, find and record facts in a personal work folder, establish project catalogs or restructure/migrate documentation for progressive disclosure. Use for engineering and non-engineering knowledge; initial project configuration, confirmed-change upkeep and documentation audits have their own skills.
 ---
 
 # Author and use focused knowledge
@@ -13,6 +13,7 @@ Inspect current entries, owners and supporting sources. If an accurate, discover
 | Reader task | Procedure |
 | --- | --- |
 | Consume an OKF concept or bundle | [OKF reading](references/okf-reading.md) |
+| Find files and facts in a personal work folder or record what the user states | [Working knowledge](references/working-knowledge.md) |
 | Produce or revise an OKF concept | [OKF authoring](references/okf-authoring.md) |
 | Establish or extend a small project catalog | [Catalogs](references/catalogs.md) |
 | Author missing knowledge from requirements, code or business records | [Source-backed authoring](references/source-backed-authoring.md) |

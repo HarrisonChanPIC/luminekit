@@ -71,7 +71,7 @@ The installer supports Claude Code, Codex and Qoder. Installing files does not e
 | Coordinate work through the five-stage workflow | [luminekit-workflow](skills/luminekit-workflow/SKILL.md) |
 | Interview the user to clarify a plan, decision or idea | [luminekit-grill](skills/luminekit-grill/SKILL.md) |
 | Create, revise, audit or retire agent skills in any project | [luminekit-agent-skills-maintainence](skills/luminekit-agent-skills-maintainence/SKILL.md) |
-| Author/read knowledge, establish catalogs or restructure documentation | [luminekit-docs](skills/luminekit-docs/SKILL.md) |
+| Author/read knowledge, find and record facts in a work folder, establish catalogs or restructure documentation | [luminekit-docs](skills/luminekit-docs/SKILL.md) |
 | Review documentation | [luminekit-docs-review](skills/luminekit-docs-review/SKILL.md) |
 | Configure knowledge/workspace locations, catalogs and attribution | [luminekit-setup](skills/luminekit-setup/SKILL.md) |
 | Maintain documentation and close work | [luminekit-docs-maintain](skills/luminekit-docs-maintain/SKILL.md) |
@@ -89,7 +89,9 @@ The installer supports Claude Code, Codex and Qoder. Installing files does not e
 | Draft an agreement, SOW or amendment | [luminekit-contract-draft](skills/luminekit-contract-draft/SKILL.md) |
 | Review a contract/NDA or verify returned changes | [luminekit-contract-review](skills/luminekit-contract-review/SKILL.md) |
 
-[Quotation](skills/luminekit-corporate-quotation/SKILL.md) and [approval](skills/luminekit-corporate-approval/SKILL.md) are experimental business skills included in the full collection. They require your actual commercial terms, forms and policies.
+[Quotation](skills/luminekit-corporate-quotation/SKILL.md) and [approval](skills/luminekit-corporate-approval/SKILL.md) are experimental business skills included in the full collection. They require your actual commercial terms, forms and policies. Quotation bundles a blank company cover template and a fill script that takes every value as explicit input.
+
+Some skills bundle Python scripts: Docs' folder fingerprinting uses only the standard library, and Quotation's template filling runs with [uv](https://docs.astral.sh/uv/), which installs its declared dependency. The agent can install uv when it is missing.
 
 ## Updates and removal
 
@@ -111,7 +113,7 @@ mise run check
 mise run test
 ```
 
-`mise run check` runs the same locked commands as CI: Ruff lint/format checks, skill metadata/name/license and bundle closure checks, local Markdown links/ordinary heading anchors, and the pinned OKF checker plus reserved-file checks on `tests/fixtures/okf/valid`. `mise run test` adds standard-library regression tests, including the upstream OKF tests. No installation matrix or distribution smoke test runs.
+`mise run check` runs the same locked commands as CI: Ruff lint/format checks (including bundled skill scripts), skill metadata/name/license and bundle closure checks, local Markdown links/ordinary heading anchors, and the pinned OKF checker plus reserved-file checks on `tests/fixtures/okf/valid`. `mise run test` adds regression tests, including the upstream OKF tests and tests for bundled skill scripts. No installation matrix or distribution smoke test runs.
 
 Without mise, run the individual commands in [mise.toml](mise.toml). `scripts/check_skills.py [skills-root] [skill-name ...]` checks only selected siblings when names are given. Every resource must be reachable from its `SKILL.md`; links and resource symlinks stay within the bundle. `scripts/check_links.py [paths ...]` checks actual Markdown links/images, reference links and ordinary headings, including Unicode/punctuation and duplicate suffixes. It ignores fenced/inline code and external URL availability. HTML/generated anchors and renderer-specific heading extensions are outside its coverage. For an OKF bundle, `--bundle-root PATH` resolves leading-slash paths against that bundle and checks reserved index/log structures; maintained-route link policy is stricter than OKF's tolerant consumer contract.
 

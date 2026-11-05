@@ -18,4 +18,6 @@ Check the selected offer against the approved commercial basis, including entiti
 
 An unresolved entity, price, tax basis or commercial decision holds the affected issue-ready claim. For returned corrections, verify the particular issue in the actual revised source/export: a fixed total cannot cure a lost delivery condition, wrong entity or stale attachment. Draft, approved terms, issued offer and sent message are separate states.
 
+To produce the quotation document from the company template, use [template filling](references/template-filling.md). Collect each commercial value from the user or their recorded pages; the skill bundles no customer data, prices or tax rates.
+
 For requested email/chat delivery, use the `luminekit-corporate-correspondence` skill.

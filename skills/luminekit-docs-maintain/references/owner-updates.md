@@ -11,7 +11,7 @@ Use when authoring or changing a knowledge owner. Identify subject/entity, appli
 - **Original evidence:** retain controlled identity, revision and source/export relationships. A newer derivative does not make a received original disposable or defective.
 - **Active work and recall:** the existing tracker owns task status; a continuation note carries only otherwise missing unfinished state. Neither establishes current policy or approval.
 
-Combine only material needed for the same reader task, such as a current rule and its approved-future version with clear periods. Follow the `luminekit-docs` rule to place content by reader task: contextual history, work logs, run evidence and decision narratives stay outside current guidance. Reuse existing owners instead of creating parallel registers or a prescribed folder system. Unknown, zero, false and not applicable remain distinct values.
+Combine only material needed for the same reader task, such as a current rule and its approved-future version with clear periods. Follow the `luminekit-docs` rule to place content by reader task: contextual history, work logs, run evidence and decision narratives stay outside current guidance. When an update touches an OKF `log.md`, remove entries that no longer help a reader. Reuse existing owners instead of creating parallel registers or a prescribed folder system. Unknown, zero, false and not applicable remain distinct values.
 
 ## Update affected owners
 
