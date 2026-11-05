@@ -45,7 +45,7 @@ To create or maintain agent skills in any project, install the authoring skill w
 
 ```sh
 npx skills add arxbombus/luminekit \
-  --skill luminekit-agent-skills-maintainence luminekit-workflow luminekit-arena
+  --skill luminekit-agent-skills-maintenance luminekit-workflow luminekit-arena
 ```
 
 For a standalone interview skill:
@@ -70,7 +70,7 @@ The installer supports Claude Code, Codex and Qoder. Installing files does not e
 | --- | --- |
 | Coordinate work through the five-stage workflow | [luminekit-workflow](skills/luminekit-workflow/SKILL.md) |
 | Interview the user to clarify a plan, decision or idea | [luminekit-grill](skills/luminekit-grill/SKILL.md) |
-| Create, revise, audit or retire agent skills in any project | [luminekit-agent-skills-maintainence](skills/luminekit-agent-skills-maintainence/SKILL.md) |
+| Create, revise, audit or retire agent skills in any project | [luminekit-agent-skills-maintenance](skills/luminekit-agent-skills-maintenance/SKILL.md) |
 | Author/read knowledge, find and record facts in a work folder, establish catalogs or restructure documentation | [luminekit-docs](skills/luminekit-docs/SKILL.md) |
 | Review documentation | [luminekit-docs-review](skills/luminekit-docs-review/SKILL.md) |
 | Configure knowledge/workspace locations, catalogs and attribution | [luminekit-setup](skills/luminekit-setup/SKILL.md) |
@@ -105,7 +105,7 @@ Use `-g` for global installations when updating or removing. Review changes befo
 
 ## Development
 
-Edit `skills/` directly. Repository checks use uv-managed Python 3.14; their dependencies and lock are development tools, separate from the Node-based external installation CLI. Follow `luminekit-agent-skills-maintainence` for skill changes and [AGENTS.md](AGENTS.md) for project rules.
+Edit `skills/` directly. Repository checks use uv-managed Python 3.14; their dependencies and lock are development tools, separate from the Node-based external installation CLI. Follow `luminekit-agent-skills-maintenance` for skill changes and [AGENTS.md](AGENTS.md) for project rules.
 
 ```sh
 uv sync --locked

@@ -1,5 +1,5 @@
 ---
-name: luminekit-agent-skills-maintainence
+name: luminekit-agent-skills-maintenance
 license: Proprietary. All rights reserved.
 description: Create, revise, audit or retire agent skills and their supporting resources. Use for skill authoring and maintenance in any project or agent harness.
 ---

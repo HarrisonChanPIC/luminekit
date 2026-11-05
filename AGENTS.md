@@ -2,7 +2,7 @@
 
 Follow [luminekit-workflow](skills/luminekit-workflow/SKILL.md). Read only the relevant specialist and triggered references. When a repository skill is not available through native discovery, read its `skills/<name>/SKILL.md` directly.
 
-For agent-skill creation, maintenance, audit or retirement, follow `luminekit-agent-skills-maintainence`.
+For agent-skill creation, maintenance, audit or retirement, follow `luminekit-agent-skills-maintenance`.
 
 `skills/` is the single editable source for distribution through the Vercel skills CLI. Keep the collection's rights-reserved license notice in skill metadata. Do not add an application to install the skills.
 
