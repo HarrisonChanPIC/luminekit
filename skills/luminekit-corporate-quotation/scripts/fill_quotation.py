@@ -25,9 +25,15 @@ TEMPLATE = Path(__file__).resolve().parents[1] / "assets" / "quotation-template.
 CENT = Decimal("0.01")
 ISSUER_SIGNATORIES = 2  # company standard: two signature fields on our side
 REQUIRED = {
-    "issuer": ["tin", "address", "website"],  # the name is in the template logo
     "customer": ["name"],
     "quotation": ["number", "date", "project"],
+}
+# UNI-PIPC, whose logo the template carries. An input "issuer" object overrides any field.
+ISSUER_DEFAULTS = {
+    "tin": "010-873-101-00000",
+    "address": "16th Floor, Hanston Square, 17 San Miguel Avenue, Ortigas Center,"
+    " Pasig City, 1605 Philippines",
+    "website": "https://www.pic.net.ph/",
 }
 OPTIONAL = {"customer": ["address", "contact_name", "contact"]}
 CURRENCY_NAMES = {"PHP": "Philippine Pesos", "USD": "US Dollars", "TWD": "New Taiwan Dollars"}
@@ -114,6 +120,14 @@ def validate(data):
     problems = []
     if not isinstance(data, dict):
         raise InputError("input must be a JSON object")
+    issuer = data.get("issuer", {})
+    if not isinstance(issuer, dict):
+        problems.append("issuer must be an object")
+        issuer = {}
+    issuer = {**ISSUER_DEFAULTS, **issuer}
+    for key in ISSUER_DEFAULTS:
+        if present(issuer, key) is None:
+            problems.append(f"issuer.{key} must be nonempty text")
     for section, keys in REQUIRED.items():
         for key in keys:
             if present(data.get(section), key) is None:
@@ -175,6 +189,7 @@ def validate(data):
 
     q = {
         **data,
+        "issuer": issuer,
         "currency": currency,
         "vat_basis": vat_basis,
         "items": items,

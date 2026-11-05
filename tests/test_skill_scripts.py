@@ -280,6 +280,17 @@ class Quotation(unittest.TestCase):
         data["extra_remarks"] = ["x"]
         self.assertIn("extra_remarks", self.refused(data))
 
+    def test_issuer_details_default_and_can_be_overridden(self):
+        data = copy.deepcopy(SAMPLE)
+        del data["issuer"]
+        self.assertEqual(self.check(data)["issuer"], fq.ISSUER_DEFAULTS)
+        data["issuer"] = {"address": "New Address"}
+        issuer = self.check(data)["issuer"]
+        self.assertEqual(issuer["address"], "New Address")
+        self.assertEqual(issuer["tin"], fq.ISSUER_DEFAULTS["tin"])
+        data["issuer"] = {"tin": ""}
+        self.assertIn("issuer.tin", self.refused(data))
+
     def test_issuer_needs_exactly_two_signatories(self):
         for count in (1, 3):
             data = copy.deepcopy(SAMPLE)

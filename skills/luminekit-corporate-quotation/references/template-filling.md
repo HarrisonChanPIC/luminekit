@@ -18,7 +18,6 @@ Ask the user for each value or take it from their recorded pages. Never borrow a
 
 ```json
 {
-  "issuer": {"tin": "…", "address": "…", "website": "…"},
   "customer": {"name": "…", "address": "…", "contact_name": "…", "contact": "…"},
   "quotation": {"number": "…", "date": "…", "project": "…", "valid_until": "…"},
   "currency": "PHP",
@@ -39,6 +38,7 @@ Ask the user for each value or take it from their recorded pages. Never borrow a
 - `vat_basis` (`exclusive` or `inclusive`) labels the price columns, such as "(PHP, VAT Excl.)". Without it the columns show only the currency.
 - Each `summary` line has a `label`, a bold `amount` and a `suffix`, any of which can be left out. They are shown exactly as written.
 - `detail`, `unit`, `no`, the customer's address and contact fields, and `summary` are optional. Leave out what the user did not give instead of inventing it.
+- The issuer's TIN, address and website default to UNI-PIPC's, matching the template logo. Give an `issuer` object with `tin`, `address` or `website` only to change one, such as after an address change.
 - Our side always signs with two signatories, so `signatories.issuer` needs exactly two people with their roles; the script refuses one or three. The customer side needs at least one.
 
 ## Remarks
