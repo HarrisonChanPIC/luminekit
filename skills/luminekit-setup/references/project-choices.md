@@ -23,17 +23,18 @@ For authorized application:
 
 ## Instruction routes
 
-Conventions, knowledge locations, naming, workspace and attribution belong in documentation, never in agent instruction files. An instruction file holds only a short route that tells an agent where to start, for example "Before working here, read `docs/index.md`; it records this project's conventions and where knowledge lives."
+Conventions, knowledge locations, naming, workspace and attribution belong in documentation, never in agent instruction files. The canonical instruction file holds a short route that tells an agent where to start, for example "Before working here, read `docs/index.md`; it records this project's conventions and where knowledge lives."
 
-- Add the route to each existing instruction file the user's harnesses read, such as `AGENTS.md` or `CLAUDE.md`. Preserve unrelated rules.
-- When none exists, create `AGENTS.md` at the project or folder root with the route. When a harness that does not read `AGENTS.md` is used, such as Claude Code, also create its native file (`CLAUDE.md` containing `@AGENTS.md`).
+- Keep one canonical instruction file for each directory scope. Use the established owner, such as `AGENTS.md` or `CLAUDE.md`, and put the documentation route there once. When none exists, create `AGENTS.md` at the project or folder root.
+- When both files exist or multiple harness entrypoints are needed, consolidate shared instructions in the canonical file and make the other files thin imports or explicit routes to it. For example, with canonical `AGENTS.md`, `CLAUDE.md` contains `@AGENTS.md`. If `CLAUDE.md` is canonical, route `AGENTS.md` to it using an explicit instruction to read `CLAUDE.md`; use native import syntax only where the consuming harness supports it. Keep routes one-way and free of cycles.
+- Preserve unique existing rules when consolidating; resolve conflicting rules before replacing either source. Keep genuinely harness-specific rules in their native entrypoint only when needed, without repeating shared instructions. Nested instructions for a different directory scope remain distinct.
 - Tell the user which files were created or changed. File presence does not establish automatic loading; observe the actual host separately.
 
 Preserve choices on rerun. A later category addition updates the small catalog without another setup interview. New producer-defined fields are outside ordinary setup; use standard OKF fields and Markdown first. Existing unfamiliar fields remain preserved.
 
 ## Check the result
 
-Read back the instruction entries, catalog and workspace route as a new reader would. Check that aliases agree, the chosen directory is usable, local links reach substantive owners and ordinary guidance has no required ignored-work dependency. Deliver each actual location and unresolved choice. If awaiting answers, leave that part explicitly pending rather than calling setup complete. A plan-only request produces the same concrete choices/destinations as a proposal without writes.
+Read back the instruction entries, catalog and workspace route as a new reader would. Check that each entrypoint reaches the same canonical instructions for its scope without duplicated rules, broken imports or cycles, aliases agree, the chosen directory is usable, local links reach substantive owners and ordinary guidance has no required ignored-work dependency. Deliver each actual location and unresolved choice. If awaiting answers, leave that part explicitly pending rather than calling setup complete. A plan-only request produces the same concrete choices/destinations as a proposal without writes.
 
 When usable orchestration and the user's workflow make preferences relevant, preserve or offer provider/model/options intent. Check proposed choices against current capabilities; keep project role preferences separate from machine-local identifiers and secrets. Follow the independent-runs procedure of `luminekit-arena` and current host instructions for actual dispatch; configuring preferences does not authorize or demonstrate a panel. Single-harness projects need no orchestration setup.
 
