@@ -71,6 +71,8 @@ Ask for the task you want to complete, naming a skill when useful. For example: 
 
 The workflow is applied once per task. Specialists reuse the current context and load supporting references only when relevant. The skills do not provide external tools, credentials, company policies or approval authority; those come from the actual environment and task.
 
+For optional role/model preferences, ask `luminekit-setup` to recommend useful responsibilities and eligible models, then save your selected assignments in the project's maintained convention/profile owner. One harness remains sufficient; custom roles and model pools are optional. Saving preferences does not configure a running session. This repository's selected [roles and execution profile](docs/roles-and-execution.md) is tracked separately from the reusable skills and is not an installation default.
+
 Grill works independently of Workflow and returns clarified intent and decisions in the reply. You can also invoke it directly: “Use `luminekit-grill` to grill me on this plan.” Saved documentation and implementation require their own requested scope.
 
 The installer supports Claude Code, Codex and Qoder. Installing files does not establish identical behavior in every client; verify the workflows you rely on in your actual agent and version.
@@ -85,7 +87,7 @@ The installer supports Claude Code, Codex and Qoder. Installing files does not e
 | Capture, organize, review or close commitments; reconcile recurring work on request | [luminekit-tasks](skills/luminekit-tasks/SKILL.md) |
 | Author/read knowledge, find and record facts in a work folder, establish catalogs or restructure documentation | [luminekit-docs](skills/luminekit-docs/SKILL.md) |
 | Review documentation | [luminekit-docs-review](skills/luminekit-docs-review/SKILL.md) |
-| Configure knowledge/workspace locations, catalogs and attribution | [luminekit-setup](skills/luminekit-setup/SKILL.md) |
+| Configure project conventions or optional agent roles and model assignments | [luminekit-setup](skills/luminekit-setup/SKILL.md) |
 | Maintain documentation and close work | [luminekit-docs-maintain](skills/luminekit-docs-maintain/SKILL.md) |
 | Handle context pressure, checkpoint or resume missing work context | [luminekit-continue](skills/luminekit-continue/SKILL.md) |
 | Explain code or trace a proposed change's impact | [luminekit-engineering-understand](skills/luminekit-engineering-understand/SKILL.md) |

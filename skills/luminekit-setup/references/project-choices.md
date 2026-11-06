@@ -11,6 +11,7 @@ Resolve only consequential choices not already settled by the user or project. A
 - Temporary work location. Suggest a suitable location from actual conventions; the user may choose an ignored local folder, shared/versioned plans or external scratch. There is no universal default. Use one compact entry per real initiative and create focused work owners only when useful. Existing docs must work without ignored state.
 - Human attribution: if unset, ask whether the user wants attribution and which name or stable pseudonym to use as `human:<id>`. Offer omission as a valid choice. Explain that attribution does not record verification or approval. Never derive personal identity from accounts, Git or the home directory. Ask about conflicting saved aliases before replacing either.
 - Harnesses actually used. Keep one substantive convention owner and thin native pointers where supported. File presence does not establish automatic loading; observe the actual host separately. Do not assume one harness loads another's instruction or memory files.
+- Optional role/model preferences when requested or relevant to the user's workflow: use [roles and models](roles-and-models.md) for recommendations, selections and persistence. One agent may cover the work; role setup is not a prerequisite for ordinary single-harness use.
 
 ## Establish the selected setup
 
@@ -35,10 +36,6 @@ Preserve choices on rerun. A later category addition updates the small catalog w
 ## Check the result
 
 Read back the instruction entries, catalog and workspace route as a new reader would. Check that each entrypoint reaches the same canonical instructions for its scope without duplicated rules, broken imports or cycles, aliases agree, the chosen directory is usable, local links reach substantive owners and ordinary guidance has no required ignored-work dependency. Deliver each actual location and unresolved choice. If awaiting answers, leave that part explicitly pending rather than calling setup complete. A plan-only request produces the same concrete choices/destinations as a proposal without writes.
-
-When the user's workflow makes role preferences relevant, preserve or optionally capture role intent and model/effort preferences. Roles describe responsibilities, not a required fleet; one agent may cover several. Reuse sufficient native profiles and existing configuration owners instead of requiring a new model sheet or registry. Keep portable project intent separate from machine-local provider/model/option identifiers and secrets.
-
-Before applying mappings, use the capability-validation rules in the delegation and independent-work procedure of `luminekit-workflow`; that procedure and current host rules govern actual execution. Saving preferences neither changes the current session's model nor authorizes or demonstrates a panel. Single-harness projects need no orchestration setup; preserve existing choices and keep reruns scoped.
 
 Consumer support is guidance through skills. Do not generate validator installations, CI, hooks, schema registries, indexing services or an application as part of setup. Existing project checks remain applicable. A materially different tooling request has its own scope.
 
