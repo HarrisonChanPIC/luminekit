@@ -39,13 +39,14 @@ npx skills add arxbombus/luminekit \
   luminekit-docs-maintain luminekit-continue luminekit-arena
 ```
 
-This selection includes every skill the documentation skills name, including Arena's conditional orchestration procedure used by Setup. For other custom selections, also include the collection skills named by the selected skills.
+This selection includes every skill the documentation skills name. Workflow owns shared delegation controls; Arena supplies conditional independent comparison methods. For other custom selections, also include the collection skills named by the selected skills.
 
-To create or maintain agent skills in any project, install the authoring skill with Workflow and Arena's independent-run procedure:
+To create or maintain agent skills in any project, add the authoring skill to the documentation selection above. It supplies Workflow's shared independent-work procedure and Continue's conditional recovery dependencies:
 
 ```sh
 npx skills add arxbombus/luminekit \
-  --skill luminekit-agent-skills-maintenance luminekit-workflow luminekit-arena
+  --skill luminekit-agent-skills-maintenance luminekit-workflow luminekit-continue \
+  luminekit-docs luminekit-docs-review luminekit-docs-maintain luminekit-setup luminekit-arena
 ```
 
 For a standalone interview skill:
@@ -54,10 +55,12 @@ For a standalone interview skill:
 npx skills add arxbombus/luminekit --skill luminekit-grill
 ```
 
-For task tracking, install Tasks and Workflow together:
+For task tracking, include Tasks with Workflow and its conditional continuation dependencies:
 
 ```sh
-npx skills add arxbombus/luminekit --skill luminekit-tasks luminekit-workflow
+npx skills add arxbombus/luminekit \
+  --skill luminekit-tasks luminekit-workflow luminekit-continue luminekit-docs \
+  luminekit-docs-review luminekit-docs-maintain luminekit-setup luminekit-arena
 ```
 
 Tasks currently supplies a Backlog.md backend reference. It uses your existing board and installed Backlog tools; it does not install a task application. Capture, review, updates, closure and recurring work run on request in an ordinary agent session. Add the domain skills needed to perform the actual work separately.
@@ -84,7 +87,7 @@ The installer supports Claude Code, Codex and Qoder. Installing files does not e
 | Review documentation | [luminekit-docs-review](skills/luminekit-docs-review/SKILL.md) |
 | Configure knowledge/workspace locations, catalogs and attribution | [luminekit-setup](skills/luminekit-setup/SKILL.md) |
 | Maintain documentation and close work | [luminekit-docs-maintain](skills/luminekit-docs-maintain/SKILL.md) |
-| Capture or resume missing work context | [luminekit-continue](skills/luminekit-continue/SKILL.md) |
+| Handle context pressure, checkpoint or resume missing work context | [luminekit-continue](skills/luminekit-continue/SKILL.md) |
 | Explain code or trace a proposed change's impact | [luminekit-engineering-understand](skills/luminekit-engineering-understand/SKILL.md) |
 | Diagnose a failure or ineffective changes | [luminekit-diagnose](skills/luminekit-diagnose/SKILL.md) |
 | Test an assumption behind repeated failures | [luminekit-attack-the-premise](skills/luminekit-attack-the-premise/SKILL.md) |

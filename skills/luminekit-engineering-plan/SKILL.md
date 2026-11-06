@@ -12,8 +12,8 @@ Reuse sufficient understanding of preserved behavior, interfaces, state/data, co
 
 | Concern | Procedure |
 | --- | --- |
-| Behavioral contracts, integration constraints or option criteria | [Design and options](references/design-and-options.md) |
+| Behavioral contracts, required implementation bases, option criteria or plan readiness | [Design and options](references/design-and-options.md) |
 | Consequential open interface, representation, ownership or module shape | [Architectural design](references/architectural-design.md) |
 | Multiple units, dependencies, migration or substantial verification | [Slices and acceptance](references/slices-and-acceptance.md) |
 
-Review feasibility against current constraints and deliver the approach, decisive tradeoffs, units and open decisions. A justified no-change plan is valid. Planning alone includes no scaffold, prototype, benchmark, dependency installation or published ticket.
+Complete the applicable plan-readiness review before dependent implementation and deliver the approach, decisive tradeoffs, units, review dispositions and open decisions. A justified no-change plan is valid. Planning alone includes no scaffold, prototype, benchmark, dependency installation or published ticket.

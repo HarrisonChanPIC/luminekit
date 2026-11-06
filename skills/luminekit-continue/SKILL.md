@@ -1,7 +1,7 @@
 ---
 name: luminekit-continue
 license: Proprietary. All rights reserved.
-description: Capture otherwise missing unfinished state at a session/person boundary, recover current work with or without a checkpoint, or recommend a useful fresh-context boundary after repeated failures/corrections. Skip redundant packets and routine completed/coherent work; native memory or automatic session control is not assumed.
+description: Handle signaled context-capacity pressure or lost working state, capture missing unfinished state at a session/person boundary, and resume against current sources. Also recommend useful fresh context after repeated failures/corrections. Skip redundant packets; native compaction and automatic session control are not assumed.
 ---
 
 # Continue from verifiable state
@@ -17,6 +17,6 @@ Capture or recover only the unfinished state current docs/artifacts/tracker cann
 | Capture/refresh otherwise missing state at an agreed boundary | [Capture](references/capture.md) |
 | Resume or reconstruct after interruption, with or without a checkpoint | [Recover](references/resume.md) |
 | Transfer to another reader or source-access context | Also [recipient access](references/recipient-access.md) |
-| Assess a useful context boundary after failures/corrections or irrelevant investigation | [Boundary recommendation](references/boundaries.md) |
+| Respond to context-capacity signals, lost working state or a useful fresh-context boundary | [Context boundaries](references/boundaries.md) |
 
 Read back a saved note against current corrections and source/check identities. Report next supported action and unresolved dependencies. Distinguish prepared note, verified reader access and demonstrated fresh resumption; writing a note does not clear context or restore hidden history. An abruptly stopped agent cannot be relied on to save a final checkpoint. Retire a note only after authorized durable transfer of its unique value.

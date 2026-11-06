@@ -8,6 +8,8 @@ Derive expected outcomes from requirements or independently worked source facts,
 
 Exercise the actual public behavior and relevant durable/runtime state. Select discriminating alternate, benign, boundary or failure inputs that expose the defect or overfitting. A self-comparison, constant-only assertion, weakened test or mock replacing the behavior is insufficient.
 
+For work assembled from multiple units, execute acceptance and cross-module checks on the actual combined revision. Worker summaries and passing local tests do not establish integrated behavior. Verify supported corrections against the changed result and report original acceptance still unexercised; planned probes remain planned until they reach the relevant behavior.
+
 Tool/setup failure is a check failure, not proof of a product defect. Import, collection, fixture, runner, selector and pre-behavior timeout errors do not establish a regression; a missing check is a coverage gap. An authorized isolated mutant can demonstrate detector sensitivity: it must reach the intended violation and fail the relevant assertion. An independent public-entry observation matters when monkeypatch/global test state could mask the implementation. Do not alter live systems to create a control.
 
 ## Match the actual boundary

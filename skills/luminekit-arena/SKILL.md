@@ -15,4 +15,4 @@ Choose the purpose before dispatch or assessment: **independent recommendation**
 | Frame/dispatch isolated candidates or use supplied/provider results | [Independent runs](references/independent-runs.md) |
 | Judge alternatives, select a base and verify a synthesis | [Comparison and synthesis](references/comparison-and-synthesis.md) |
 
-Assessing supplied candidates does not require new dispatch. The independent-runs procedure owns capability limits; the comparison procedure owns what the available evidence can decide.
+Assessing supplied candidates does not require new dispatch. The independent-runs procedure supplies Arena framing and routes to Workflow's shared execution controls; the comparison procedure owns what the available evidence can decide.

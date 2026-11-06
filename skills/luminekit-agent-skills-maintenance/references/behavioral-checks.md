@@ -1,6 +1,6 @@
 # Check decisions and activation
 
-For independent checks, use the independent-runs procedure of the `luminekit-arena` skill.
+For independent checks, use the delegation and independent-work procedure of `luminekit-workflow`; maintenance comparisons do not require Arena's alternative-selection method.
 
 Use fresh independent runs with and without the guidance for non-obvious deletions or guardrail rewrites. For maintenance, compare the retained current version with the revision; when a claimed no-op needs testing, also run the relevant task without that rule. A failed comparison reopens the affected deletion or rewrite. If the needed independent run is unavailable, retain the guidance whose removal depends on it and report the remaining check.
 

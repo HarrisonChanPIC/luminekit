@@ -1,6 +1,6 @@
 # Compare and synthesize approaches
 
-Use actual returned or explicitly supplied approaches and the criteria fixed before their outputs. The [independent-work procedure](independent-runs.md) owns context isolation, collection, judge setup and capability limits.
+Use actual returned or explicitly supplied approaches and the criteria fixed before their outputs. The [independent-runs procedure](independent-runs.md) owns Arena framing and judge setup and routes to Workflow's shared execution controls.
 
 1. **Assess each actual approach.** Compare its mechanism and source support criterion by criterion as satisfied, violated, unsupported or unavailable. Explain decisive evidence rather than confidence, length or votes. Mark scope/assumption differences affecting comparability. A missing candidate has no inferred design.
 2. **Respect hard requirements.** A weighted total cannot offset a violated constraint. Numeric scores are useful only under a meaningful predeclared rubric; qualitative dispositions suffice. Check any judge's conclusions against the artifacts and retain credible disagreements.

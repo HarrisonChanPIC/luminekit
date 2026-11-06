@@ -14,6 +14,7 @@ Keep existing projects on their declared language/runtime versions and establish
 
 | Concern | Procedure |
 | --- | --- |
+| Before relying on consequential design decisions, including supplied plans | Planning and plan-readiness procedure of `luminekit-engineering-plan`; reuse sufficient current review |
 | Substantive feature/fix, refactor, migration or prototype | [Change kinds](references/change-kinds.md) |
 | Practical test-first behavior change, or explicit test-first request | [Test-first cycle](references/test-first.md) before changing that behavior |
 | Independent expectations, meaningful checks or source/build correspondence | [Verification](references/verification.md) |
