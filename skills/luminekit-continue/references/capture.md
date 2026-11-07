@@ -1,6 +1,6 @@
 # Capture otherwise missing unfinished state
 
-Use for an agreed session/person boundary or permitted checkpoint, including proactive capture at a safe boundary under signaled context pressure. Identify the next task, intended reader and retrievable output scope. Inspect current owners, artifacts, tracker and continuation state first; if they recover the necessary context, return useful pointers instead of another note.
+Use for an agreed session/person boundary or permitted checkpoint. Identify the next task, intended reader and retrievable output scope. Inspect current owners, artifacts, tracker and continuation state first; if they recover the necessary context, return useful pointers instead of another note.
 
 ## Capture the gap
 

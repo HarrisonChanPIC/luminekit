@@ -89,7 +89,7 @@ The installer supports Claude Code, Codex and Qoder. Installing files does not e
 | Review documentation | [luminekit-docs-review](skills/luminekit-docs-review/SKILL.md) |
 | Configure project conventions or optional agent roles and model assignments | [luminekit-setup](skills/luminekit-setup/SKILL.md) |
 | Maintain documentation and close work | [luminekit-docs-maintain](skills/luminekit-docs-maintain/SKILL.md) |
-| Handle context pressure, checkpoint or resume missing work context | [luminekit-continue](skills/luminekit-continue/SKILL.md) |
+| Checkpoint, hand off or resume missing work context | [luminekit-continue](skills/luminekit-continue/SKILL.md) |
 | Explain code or trace a proposed change's impact | [luminekit-engineering-understand](skills/luminekit-engineering-understand/SKILL.md) |
 | Diagnose a failure or ineffective changes | [luminekit-diagnose](skills/luminekit-diagnose/SKILL.md) |
 | Test an assumption behind repeated failures | [luminekit-attack-the-premise](skills/luminekit-attack-the-premise/SKILL.md) |
