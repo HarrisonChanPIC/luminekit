@@ -11,7 +11,7 @@ Resolve only consequential choices not already settled by the user or project. A
 - Temporary work location. Suggest a suitable location from actual conventions; the user may choose an ignored local folder, shared/versioned plans or external scratch. There is no universal default. Use one compact entry per real initiative and create focused work owners only when useful. Existing docs must work without ignored state.
 - Human attribution: if unset, ask whether the user wants attribution and which name or stable pseudonym to use as `human:<id>`. Offer omission as a valid choice. Explain that attribution does not record verification or approval. Never derive personal identity from accounts, Git or the home directory. Ask about conflicting saved aliases before replacing either.
 - Harnesses actually used. Keep one substantive convention owner and thin native pointers where supported. File presence does not establish automatic loading; observe the actual host separately. Do not assume one harness loads another's instruction or memory files.
-- Optional role/model preferences when requested or relevant to the user's workflow: use [roles and models](roles-and-models.md) for recommendations, selections and persistence. One agent may cover the work; role setup is not a prerequisite for ordinary single-harness use.
+- Optional roles, model preferences, task-based controller selection or execution boundaries when requested or relevant to the user's workflow: use [roles and models](roles-and-models.md) for recommendations, selections and persistence. One agent may cover the work; role setup is not a prerequisite for ordinary single-harness use.
 
 ## Establish the selected setup
 

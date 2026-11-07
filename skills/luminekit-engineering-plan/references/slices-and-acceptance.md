@@ -1,5 +1,7 @@
 # Slices and independent acceptance
 
+For an ambitious bounded outcome, tailor a sufficient workflow before dependent implementation: state observable completion, ground scope and resources, identify the riskiest unknowns, then choose phases, reviewed dependencies and independent acceptance. Establish the relevant pre-change baseline and feasible verification early. Keep overall ownership with the current agent unless another execution assignment is selected; a multi-phase plan does not itself require a standing program. Use the routing and execution-assignment procedures of `luminekit-workflow` if sustained coordination exceeds the session budget.
+
 For work spanning consequential module boundaries, refine top down: settle system responsibilities, shared interfaces, data/effect ownership and cross-module invariants before dependent module design. Apply [plan readiness](design-and-options.md#review-before-dependent-implementation) to that architecture before expanding it. Use `luminekit-arena` for consequential unresolved alternatives, rather than multiplying every stage into a panel.
 
 Give each module designer the selected architecture and shared contracts. Refine the module's interfaces, behavior, failure cases and dependencies into implementable units. Independent modules may proceed in parallel; reconcile cross-module contracts and apply the same plan-readiness check before dependent implementation. A discovery invalidating the architecture reopens the affected decision while compatible work remains usable.

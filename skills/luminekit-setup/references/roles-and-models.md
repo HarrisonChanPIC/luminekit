@@ -1,6 +1,6 @@
 # Choose roles and model assignments
 
-Use for requested agent-role or model setup, including a change to existing preferences. Inspect the actual harness, existing profiles and convention owner first. Preserve settled choices; ask only consequential gaps. Direct work in one harness remains the normal path. Roles describe responsibilities, not a required fleet, and one agent can cover several.
+Use for requested agent-role or model setup, including a change to existing preferences. Inspect the actual harness, existing profiles and convention owner first. Preserve settled choices; ask only consequential gaps. Direct work in one harness remains the normal path. Roles describe responsibilities, not a required fleet; one agent can cover several where the selected execution boundaries permit.
 
 ## Recommend a useful scope
 
@@ -8,7 +8,7 @@ Offer only the roles useful to the user's work. Users may rename, combine, add o
 
 | Role | Useful result | Model-selection recommendation |
 | --- | --- | --- |
-| Orchestrator | Scoped plan, bounded assignments, inspected integration and resource decisions | Match coordination and ambiguity; a reference-driven task may need less deliberation than an unresolved architecture problem. |
+| Orchestrator | Objectives, bounded assignments, dependencies, inspected acceptance and resource decisions | Match coordination and ambiguity; a reference-driven task may need less deliberation than an unresolved architecture problem. |
 | Architect | System boundaries, shared contracts, ownership and invariants | Prioritize constraint reasoning and inspectable alternatives for consequential choices. |
 | Module designer | Implementable interfaces, behavior, failures and dependencies within the selected architecture | Match the module's uncertainty; increase effort for difficult interactions rather than redesigning the whole system. |
 | Implementer | Scoped code and meaningful checks against reviewed decisions | Favor reliable tool use, reference adaptation and cost-effective execution once design is settled. |
@@ -22,7 +22,9 @@ A stronger model or maximum effort is not a default for every responsibility. A 
 
 ## Record selected intent
 
-Resolve scope (personal or project/shared), useful responsibilities, eligible models per role, effort settings or ceilings, task-specific routing, discretion within the pool and any resource limits. A user may select one model or several alternatives; do not infer their ordering, an unlisted fallback or an effort setting the host does not expose. Unsettled roles may remain unassigned. Show the proposal and consequential remaining questions without claiming it is selected or applied.
+Resolve scope (personal or project/shared), useful responsibilities, eligible models per role, effort settings or ceilings, task-specific routing, discretion within the pool and any resource limits. Record the execution arrangement and any permitted role combinations or exclusive responsibilities. Direct work with optional delegation is sufficient unless another arrangement is selected; for controller-only orchestration, use Workflow's execution-assignment procedure to distinguish coordination from delegated specialist outputs. A model choice alone does not select this boundary. A user may select one model or several alternatives; do not infer their ordering, an unlisted fallback or an effort setting the host does not expose. Unsettled roles may remain unassigned. Show the proposal and consequential remaining questions without claiming it is selected or applied.
+
+Use the routing procedure of `luminekit-workflow` to distinguish ordinary work, tailored bounded work and standing programs. Record whether agents may select a controller arrangement for qualifying tasks, which controller assignment applies and relevant resource limits. A saved role/model table alone grants no task-based controller selection. One harness with optional workers remains sufficient for bounded work; explicit user assignments can select a controller for smaller tasks. Preserve settled routing preferences on rerun rather than launching agents or adding a new interview.
 
 When saving is authorized, record approved preferences in the existing maintained conventions/profile owner and keep a short route from the actual entrypoint. Reuse sufficient native profiles and configuration owners rather than requiring another model sheet, registry or file per role. For requested durable/shared setup, use a maintained versioned owner rather than leaving the only copy in ignored scratch. Personal/private storage is also valid when selected; disclose its access and persistence limits. Keep portable intent separate from machine-local identifiers and secrets.
 
@@ -30,4 +32,4 @@ Plan-only work stays a proposal. Applying native configuration is a separate act
 
 ## Check and deliver
 
-Read back the selected roles, models, efforts, scope and discretion against the user's choices. Verify the maintained owner and entry routes are accessible to their intended readers and usable without ignored scratch. Preserve preferences and unrelated conventions on rerun. Report separately what was recommended, selected, saved, configured and actually observed loading, including unresolved availability or control gaps.
+Read back the selected roles, models, efforts, execution arrangement, role boundaries, scope and discretion against the user's choices. Verify the maintained owner and entry routes are accessible to their intended readers and usable without ignored scratch. Preserve preferences and unrelated conventions on rerun. Report separately what was recommended, selected, saved, configured and actually observed loading, including unresolved availability or control gaps. Saved execution instructions do not establish native permission enforcement.

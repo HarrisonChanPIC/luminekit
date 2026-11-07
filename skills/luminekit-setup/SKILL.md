@@ -10,7 +10,7 @@ Follow the `luminekit-workflow` skill within this skill’s scope.
 
 For one person's business work folder, follow [personal folder setup](references/personal-folder.md). Otherwise use [project choices](references/project-choices.md) to inspect existing conventions, ask only unresolved consequential questions and apply or propose the selected setup. Preserve established choices on rerun. Installation alone ends after installation/verification.
 
-For requested role/model choices, use [roles and models](references/roles-and-models.md). Keep that setup scoped; settled knowledge, catalog and attribution choices need no new interview.
+For requested role/model choices, task-based controller selection or execution boundaries, use [roles and models](references/roles-and-models.md). Keep that setup scoped; settled knowledge, catalog and attribution choices need no new interview.
 
 An applied setup leaves the chosen workspace usable, a small project catalog reachable and the chosen conventions, including the human attribution alias or omission, recorded in the documentation that owns them. Keep one canonical agent instruction file per scope, with a short route to that documentation owner. Other harness entry files import or route to the canonical file instead of duplicating instructions ([instruction routes](references/project-choices.md#instruction-routes)). Preserve unique existing rules and keep maintained knowledge usable without ignored scratch.
 
