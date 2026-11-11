@@ -9,13 +9,13 @@ The collection lives in `skills/` and uses the [Agent Skills format](https://age
 Use Node.js 22.20 or later. From the project where you want to use the collection:
 
 ```sh
-npx skills add arxbombus/luminekit --skill '*'
+npx skills add HarrisonChanPIC/luminekit --skill '*'
 ```
 
 Choose your agents when prompted, or select them explicitly:
 
 ```sh
-npx skills add arxbombus/luminekit --skill '*' -a claude-code codex qoder
+npx skills add HarrisonChanPIC/luminekit --skill '*' -a claude-code codex qoder
 ```
 
 Add `-g` to install for your user account across projects. The CLI handles each agent's destination directories. If the repository is private, recipients need repository access and configured Git authentication. Remote commands require the collection to be available at that repository; local installation works before publication.
@@ -34,7 +34,7 @@ Install complete skill folders, including `references/`. Keep their folder names
 For a smaller documentation collection, install these seven skills together:
 
 ```sh
-npx skills add arxbombus/luminekit \
+npx skills add HarrisonChanPIC/luminekit \
   --skill luminekit-workflow luminekit-setup luminekit-docs luminekit-docs-review \
   luminekit-docs-maintain luminekit-continue luminekit-arena
 ```
@@ -44,7 +44,7 @@ This selection includes every skill the documentation skills name. Workflow owns
 To create or maintain agent skills in any project, add the authoring skill to the documentation selection above. It supplies Workflow's shared independent-work procedure and Continue's conditional recovery dependencies:
 
 ```sh
-npx skills add arxbombus/luminekit \
+npx skills add HarrisonChanPIC/luminekit \
   --skill luminekit-agent-skills-maintenance luminekit-workflow luminekit-continue \
   luminekit-docs luminekit-docs-review luminekit-docs-maintain luminekit-setup luminekit-arena
 ```
@@ -52,13 +52,13 @@ npx skills add arxbombus/luminekit \
 For a standalone interview skill:
 
 ```sh
-npx skills add arxbombus/luminekit --skill luminekit-grill
+npx skills add HarrisonChanPIC/luminekit --skill luminekit-grill
 ```
 
 For task tracking, include Tasks with Workflow and its conditional continuation dependencies:
 
 ```sh
-npx skills add arxbombus/luminekit \
+npx skills add HarrisonChanPIC/luminekit \
   --skill luminekit-tasks luminekit-workflow luminekit-continue luminekit-docs \
   luminekit-docs-review luminekit-docs-maintain luminekit-setup luminekit-arena
 ```
